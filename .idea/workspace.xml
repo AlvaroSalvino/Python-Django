@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5892060-95a1-4216-bc75-7a9e4223af45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python-Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +32,7 @@
     "Python.manage.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
