@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac8fa722-bb21-4659-a1b3-ec6cc90b81ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_django/python_django/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_django/python_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_django/python_django/urls.py" afterDir="false" />
+    <list default="true" id="e5892060-95a1-4216-bc75-7a9e4223af45" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python-Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Django.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/python_django/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/python_django/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/python_django/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/python_django/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_django/python_django/wsgi.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +36,7 @@
   "customColor": "",
   "associatedIndex": 1
 }]]></component>
-  <component name="ProjectId" id="2axdCgkkKPmmueYU8oWsKRg1huu" />
+  <component name="ProjectId" id="2b2HMQh0f2qhwAtnqdUPrhPutLN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,8 +50,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.manage">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python-Django" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -51,29 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python-Django" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_django" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_django/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,10 +73,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.manage" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manage" />
@@ -102,11 +89,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac8fa722-bb21-4659-a1b3-ec6cc90b81ea" name="Changes" comment="" />
-      <created>1705264041607</created>
+      <changelist id="e5892060-95a1-4216-bc75-7a9e4223af45" name="Changes" comment="" />
+      <created>1705406206877</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705264041607</updated>
+      <updated>1705406206877</updated>
     </task>
     <servers />
   </component>
