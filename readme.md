@@ -2,4 +2,4 @@
 
 # Desenvolvimento Web com Python e Django
 
-![Python_Django](Python Django.jpg)
+![Python_Django](Python%20Django.jpg)
