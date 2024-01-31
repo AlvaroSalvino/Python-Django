@@ -6,10 +6,33 @@
     box-sizing: border-box;
 }
 
+#root {
+    min-height: 850px;
+}
+
 h1 {
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-evenly;
+}
+
+.eventos {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.listaeventos {
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.eventoslista {
+    background-color: transparent;
 }
 
 #username{
@@ -24,7 +47,6 @@ h1 {
 #formulario {
     max-width: 26rem;
     background-color: white;
-    border-style: solid;
     border-radius: 30px;
 }
 
@@ -33,19 +55,28 @@ h1 {
 
 .novoevento {
     border-radius: 30px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    margin: 1rem 0 0 2.5rem;
+}
+
+.novoeventoa {
+    border-radius: 30px;
     border: 0px;
     padding: 0.3rem 0.7rem;
     font-size: 15px;
     font-weight: 700;
-    background: #103e46;
-    color: white;
+    background: #125c69e3;
+    color: black;
     position: relative;
     cursor: pointer;
 }
 
-:hover.novoevento{
-    color: rgb(255, 251, 0);
-    background: #103e46de;
+:hover.novoeventoa{
+    color: white;
+    background: #ff7300;
+    box-shadow: white;
 }
 
 form{
@@ -57,6 +88,11 @@ div{
     color: white;
     display: block;
     background-color: transparent;
+}
+
+.author{
+    margin-left: 0.4rem;
+    color: black;
 }
 
 .svgemail {
@@ -71,6 +107,19 @@ div{
 
 #password {
     background-color: white;
+}
+
+.footer {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+}
+
+.alteration {
+    text-decoration: none;
+    background-color: transparent;
 }
 
 form {
