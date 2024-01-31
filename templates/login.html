@@ -19,14 +19,14 @@
                         </svg>
                         <input id="password" type="password" name="password" placeholder="Senha" required>
                     </div>
-                    <button name="login" id="loginbutton" type="submit">Entrar</button>
+                    <button name="login" class="loginbutton" type="submit">Entrar</button>
                 </div>
             </div>
         </form>
     </div>
     {% for message in messages %}
         <div align="center">
-            <strong>Erro</strong>{{ message }}
+            <strong>Erro </strong>{{ message }}
         </div>
     {% endfor %}
 {% endblock %}

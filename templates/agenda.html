@@ -2,9 +2,10 @@
 
 {% block content %}
 <h1>Agenda</h1>
+<div id="agenda">
     <h2>Agendamentos</h2>
     <a href="evento/">
-    <button class="buttonlogout" type="button">Novo Evento</button>
+    <button class="novoevento" type="button">Novo Evento</button>
     </a>
     <ul style="font-size: 18px">
         {% for evento in eventos %}
@@ -19,4 +20,5 @@
             </li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}
