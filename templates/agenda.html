@@ -1,6 +1,7 @@
 {% extends "model-page.html" %}
 
 {% block content %}
+<h1>Agenda</h1>
     <h2>Agendamentos</h2>
     <a href="evento/">
     <button class="buttonlogout" type="button">Novo Evento</button>
@@ -12,8 +13,8 @@
                 "color:red"
                 {% endif %}>
                     {{ evento.titulo }} - {{ evento.get_data_evento }}
-                    ( <a href="evento/?id={{ evento.id }}">Editar</a>
-                    / <a href="evento/delete/{{ evento.id }}/">Excluir</a>
+                    ( <a href="evento/?id={{ evento.id }}">Editar</a> )
+                    / ( <a href="evento/delete/{{ evento.id }}/">Excluir</a> )
                 </div>
             </li>
         {% endfor %}
