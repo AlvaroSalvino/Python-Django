@@ -4,24 +4,25 @@
 {% block content %}
 
 <h2>Evento</h2>
-<form action="submit" method="POST">{% csrf_token %}
-    <label>Título</label>
-    <input type="number" name="id_evento" value="{{ evento.id }}" hidden="hidden">
-    <br>
-    <input type="text" name="titulo" size="23" value="{{ evento.titulo }}">
-    <br>
-    <label>Data do Evento</label>
-    <br>
-    <input type="datetime-local" name="data_evento" value="{{ get_data_input_evento }}">
-    <br>
-    <label>Descrição</label>
-    <br>
-    <textarea name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
-    <br><br>
-    <button type="submit">Salvar</button>
-    <a href="/">
-        <button type="button">Cancelar</button>
-    </a>
-</form>
-
+<div class="createevento">
+    <form class="formevento" action="submit" method="POST">{% csrf_token %}
+        <label class="ask">Título</label>
+        <input type="number" name="id_evento" value="{{ evento.id }}" hidden="hidden">
+        <br>
+        <input class="inputtitulo" type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+        <br>
+        <label class="ask">Data do Evento</label>
+        <br>
+        <input class="saf" type="datetime-local" name="data_evento" value="{{ get_data_input_evento }}">
+        <br>
+        <label class="ask">Descrição</label>
+        <br>
+        <textarea class="skfie" name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
+        <br><br>
+        <button class="submit" type="submit">Salvar</button>
+        <a class="sfgsagsaglk" href="/">
+            <button class="sfgsfas" type="button">Cancelar</button>
+        </a>
+    </form>
+</div>
 {% endblock %}

@@ -11,8 +11,10 @@
         <ul class="listaeventos">
             {% for evento in eventos %}
                 <li class="eventoslista">
-                    <div style= {% if evento.get_evento_atrasado %}
+                    <div style={% if evento.get_evento_atrasado %}
                     "color:red"
+                    {% else %}
+                    "color:black"
                     {% endif %}>
                         {{ evento.titulo }} - {{ evento.get_data_evento }}
                         ( <a class="alteration" href="evento/?id={{ evento.id }}">Editar</a> )
