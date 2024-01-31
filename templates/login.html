@@ -2,18 +2,19 @@
 <html lang="pt-br" xmlns="http://www.w3.org/1999/html">
 <style>
 * {
-    background-color:rgb(255, 255, 255);
+    background-color:#9c91db;
     font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
 }
+
 h1 {
     color: rgb(0, 0, 0);
     display: flex;
-    position: relative;
-    margin-left: 43%;
+    justify-content: space-evenly;
 }
 
 #username{
+    background-color: white;
     padding: 2px 25px;
 }
 
@@ -29,15 +30,34 @@ h1 {
 }
 
 form{
-    display: block;
-    margin-top: 0em;
-    margin-block-end: 1em;
-    margin-left: 35%;
+    display: flex;
+    justify-content: space-evenly;
 }
+
 div{
+    color: white;
     display: block;
-    background-color: transparent
+    background-color: transparent;
 }
+
+.svgemail {
+    background-color: white;
+    color: rgb(156, 145, 219);
+}
+
+.svgsenha {
+    background-color: white;
+    color: rgb(156, 145, 219);
+}
+
+#password {
+    background-color: white;
+}
+
+form {
+    display: flex;
+}
+
 .formname{
     display: flex;
     flex-direction: row;
@@ -47,7 +67,7 @@ div{
     padding: 10px 5rem;
     margin: 1.5rem 0px;
     border-bottom: 1px solid rgb(255, 255, 255);
-    background-color: transparent;
+    background-color: white;
     position: relative;
     transition: border-color 0.15s ease 0s;
 }
@@ -61,7 +81,7 @@ div{
     padding: 10px 5rem;
     margin: 1.5rem 0px;
     border-bottom: 1px solid rgb(255, 255, 255);
-    background-color: transparent;
+    background-color: white;
     position: relative;
     transition: border-color 0.15s ease 0s;
 }
@@ -80,35 +100,38 @@ div{
     position: relative;
     cursor: pointer;
     transition: all 0.2s ease 0s;
+    display: block;
 }
+
 </style>
 <head>
     <meta charset="UTF-8">
     <title>Agenda</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form action="submit" method="POST">{% csrf_token %}
-        <div id="formulario" align="center">
-            <div class="">
-                <div class="formname">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-                    </svg>
-                    <input id="username" type="text" name="username" placeholder="Usuário ou E-mail" required>
+    <div id="root">
+        <h1 >Login</h1>
+        <form action="submit" method="POST">{% csrf_token %}
+            <div id="formulario">
+                <div class="">
+                    <div class="formname">
+                        <svg class="svgemail" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+                        </svg>
+                        <input id="username" type="text" name="username" placeholder="Usuário ou E-mail" required>
+                    </div>
+                    <div class="formsenha">
+                        <svg class="svgsenha" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <g><path fill="none" d="M0 0h24v24H0z"></path>
+                                <path d="M18 8h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h2V7a6 6 0 1 1 12 0v1zm-2 0V7a4 4 0 1 0-8 0v1h8zm-5 6v2h2v-2h-2zm-4 0v2h2v-2H7zm8 0v2h2v-2h-2z"></path>
+                            </g>
+                        </svg>
+                        <input id="password" type="password" name="password" placeholder="Senha" required>
+                    </div>
+                    <button name="login" id="loginbutton" type="submit">Entrar</button>
                 </div>
-                <div class="formsenha">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <g><path fill="none" d="M0 0h24v24H0z"></path>
-                            <path d="M18 8h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h2V7a6 6 0 1 1 12 0v1zm-2 0V7a4 4 0 1 0-8 0v1h8zm-5 6v2h2v-2h-2zm-4 0v2h2v-2H7zm8 0v2h2v-2h-2z"></path>
-                        </g>
-                    </svg>
-                    <input id="password" type="password" name="password" placeholder="Senha" required>
-                </div>
-                <button name="login" id="loginbutton" type="submit">Entrar</button>
             </div>
-        </div>
-    </form>
-
+        </form>
+    </div>
     {% for message in messages %}
         <div align="center">
             <strong>Erro</strong>{{ message }}
