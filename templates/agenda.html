@@ -17,7 +17,7 @@
                     "color:black"
                     {% endif %}>
                         {{ evento.titulo }} - {{ evento.get_data_evento }}
-                        <a class="alteration" href="evento/?id={{ evento.id }}"> ( Editar )</a> / 
+                        <a class="alteration" href="evento/?id={{ evento.id }}"> ( Editar )</a><p style="color: black; display: inline; background-color: white;"> / </p>
                        <a class="alteration" href="evento/delete/{{ evento.id }}/">( Excluir )</a>
                     </div>
                 </li>
