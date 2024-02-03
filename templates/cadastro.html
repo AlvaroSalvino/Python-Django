@@ -1,0 +1,16 @@
+<style>
+.logout {
+    visibility: hidden;
+}
+</style>
+{% extends "models/model-page.html" %}
+
+{% block content %}
+<div>
+    <h1>Cadastre-se!</h1>
+    <form action="submit" method="POST">{% csrf_token %}
+    
+    </form>
+</div>
+
+{% endblock %}
