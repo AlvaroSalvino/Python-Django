@@ -1,9 +1,15 @@
+{% load static %}
+<html lang="pt-br">
 <meta charset="UTF-8">
 <title>Agenda</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <nav class="navbar">
-    <div class="divlogout" align="right">
         <button class="logout">
             <a href="/logout">Sair</a>
         </button>
+        <button class="logout">
+            <a href="/agenda">voltar</a>
+        </button>
     </div>
 </nav>
+</html>
