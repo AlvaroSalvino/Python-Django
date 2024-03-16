@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from core.models import Evento
+from core.models import Evento, Ticket
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http.response import Http404, JsonResponse
+from .form import CreateTicketForm,UpdateTicketForm
 
 # Create your views here.
 
@@ -31,8 +32,6 @@ def submit_login(request):
             messages.error(request, "Usuário ou Senha inválido.")
     return redirect('/')
 
-def cadastro(request):
-    return render(request, 'cadastro.html')
 
 @login_required(login_url='/login/')
 def lista_eventos(request):
@@ -99,3 +98,106 @@ def json_lista_evento(request):
     usuario = request.user
     evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
     return JsonResponse(list(evento), safe=False)
+
+
+"""/////////////////////////////////////////////////////////////////////////////////////////////"""
+
+# ver detalhes do ticket
+def detalhes_do_ticket(request, pk):
+    ticket = Ticket.objects.get(pk=pk)
+    contexto = {'tickets': ticket}
+    return render(request, 'agenda/detalhes_do_ticket.html', contexto)
+
+"""/////////////////////////////////////////////////////////////////////////////////////////////"""
+
+# criando o ticket
+@login_required(login_url='/login/')
+def criar_ticket(request):
+    if request.method == 'POST':
+        form = CreateTicketForm(request.POST)
+        if form.is_valid():
+            var = form.save(commit=False)
+            var.criado_por = request.user
+            var.ticket_status = 'Pendente'
+            var.save()
+            messages.info(request, 'Sua solicitação foi enviada com sucesso.')
+            return redirect('agenda')
+        else:
+            messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
+            return redirect('criar_ticket')
+    else:
+        form = CreateTicketForm()
+        contexto = {'form': form}
+        return render(request, 'agenda/criar_ticket.html', contexto)
+
+
+# subindo um ticket
+@login_required(login_url='/login/')
+def subir_ticket(request, pk):
+    ticket = Ticket.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = UpdateTicketForm(request.POST, instance=ticket)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'As informações do seu ticket foram atualizadas e todas as alterações foram salvas.')
+            return redirect('agenda')
+        else:
+            messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
+            #return redirect('create-ticket')
+    else:
+        form = UpdateTicketForm()
+        contexto = {'form': form}
+        return render(request, 'agenda/subir_ticket.html', contexto)
+
+"""/////////////////////////////////////////////////////////////////////////////////////////////"""
+# lista de tickets
+
+# viazualizar todos os tickets criados
+@login_required(login_url='/login/')
+def todos_os_tickets(request):
+    tickets = Ticket.objects.filter(criado_por=request.user)
+    contexto = {'tickets': tickets}
+    return render(request, 'agenda/todos_os_tickets.html', contexto)
+
+@login_required(login_url='/login/')
+def lista_de_tickets(request):
+    tickets = Ticket.objects.filter(ticket_status='Pendente')
+    contexto = {'tickets': tickets}
+    return render(request, 'agenda/lista_de_tickets.html', contexto)
+
+# aceitar um ticket da fila
+@login_required(login_url='/login/')
+def aceitar_ticket(request, pk):
+    ticket = Ticket.objects.get(pk=pk)
+    ticket.atribuido_para = request.user
+    ticket.ticket_status = 'Ativo'
+    ticket.data_aceita = datetime.datetime.now()
+    ticket.save()
+    messages.info(request, 'O ticket foi aceito. Por favor, resolva o mais rápido possível!')
+    return redirect('todos_os_tickets')
+
+# fechar ticket
+@login_required(login_url='/login/')
+def fechar_ticket(request, pk):
+    ticket = Ticket.objects.get(pk=pk)
+    ticket.ticket_status = 'Completo'
+    ticket.foi_resolvido = True
+    ticket.data_fechada = datetime.datetime.now()
+    ticket.save()
+    messages.info(request, 'O ticket foi resolvido. Obrigado, brilhante suporte!')
+    return redirect('todos_os_tickets')
+
+# ticket no qual está trabalhando
+@login_required(login_url='/login/')
+def area_de_trabalho(request):
+    tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido = False)
+    contexto = {'tickets': tickets}
+    return render(request, 'agenda/area_de_trabalho.html', contexto)
+
+# todos os tickets resolvidos
+@login_required(login_url='/login/')
+def todos_os_tickets_fechados(request):
+    tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido=True)
+    contexto = {'tickets': tickets}
+    return render(request, 'agenda/todos_os_tickets_fechados.html', contexto)
+
