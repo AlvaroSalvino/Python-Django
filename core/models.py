@@ -46,8 +46,23 @@ class Ticket(models.Model):
     data_fechada = models.DateTimeField(null=True, blank=True)
     ticket_status = models.CharField(max_length=15, choices=status_choices)
 
+    class Meta:
+        db_table = 'ticket'
+
     def __str__(self):
         return self.titulo
+
+    def get_prazo(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M Hrs')
+
+    def get_data_criada(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M Hrs')
+
+    def get_data_aceita(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M Hrs')
+
+    def get_data_fechada(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M Hrs')
 
     def get_data_input_prazo(self):
         return self.prazo.strftime('%Y-%m-%dT%H:%M')

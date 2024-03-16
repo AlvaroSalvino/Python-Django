@@ -121,9 +121,9 @@ def criar_ticket(request):
             var.ticket_status = 'Pendente'
             var.save()
             messages.info(request, 'Sua solicitação foi enviada com sucesso.')
-            return redirect('agenda')
+            return redirect('criar_ticket')
         else:
-            messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
+            messages.error(request, 'Algo deu errado. Por favor, verifique as informações do formulário.')
             return redirect('criar_ticket')
     else:
         form = CreateTicketForm()
