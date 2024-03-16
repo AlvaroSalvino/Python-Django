@@ -1,0 +1,27 @@
+{% extends "models/model-page.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h2>Abrir Chamado</h2>
+<div class="createevento">
+    <form class="formevento" action="submit" method="POST">
+        {% csrf_token %}
+        <label class="ask">Título</label>
+        {% render_field form.titulo_ticket class="form" %}
+        <br>
+        <label class="ask">Descrição</label>
+        <br>
+        {% render_field form.descricao_ticket class="form" %}
+        <br>
+        <label class="ask">Prazo</label>
+        <br>
+        <input class="saf" type="datetime-local" name="prazo" value="{{ get_data_input_prazo }}">
+        <br><br>
+        <button class="submit" type="submit">Salvar</button>
+        <a class="sfgsagsaglk" href="/">
+            <button class="sfgsfas" type="button">Cancelar</button>
+        </a>
+    </form>
+</div>
+{% endblock %}

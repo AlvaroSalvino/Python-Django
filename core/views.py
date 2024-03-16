@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http.response import Http404, JsonResponse
-from .form import CreateTicketForm,UpdateTicketForm
+from .form import CreateTicketForm, UpdateTicketForm
 
 # Create your views here.
 
@@ -14,7 +14,7 @@ from .form import CreateTicketForm,UpdateTicketForm
 
 
 def login_user(request):
-    return render(request,'login.html')
+    return render(request,'user/login.html')
 
 def logout_user(request):
     logout(request)
@@ -39,7 +39,7 @@ def lista_eventos(request):
     data_atual = datetime.now() - timedelta(hours=1)
     evento = Evento.objects.filter(usuario=usuario)
     dados = {'eventos':evento}
-    return render(request, 'agenda.html', dados)
+    return render(request, 'agenda/agenda.html', dados)
 
 @login_required(login_url='/login/')
 def evento(request):
@@ -47,7 +47,7 @@ def evento(request):
     dados = {}
     if id_evento:
         dados['evento'] = Evento.objects.get(id=id_evento)
-    return render(request, 'evento.html', dados)
+    return render(request, 'agenda/evento.html', dados)
 
 
 ''' São duas formas de realizar esta operação de edição de Evento abaixo, porém a forma que NÃO está 'comentada', 
@@ -106,7 +106,7 @@ def json_lista_evento(request):
 def detalhes_do_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     contexto = {'tickets': ticket}
-    return render(request, 'agenda/detalhes_do_ticket.html', contexto)
+    return render(request, 'ticket/detalhes_do_ticket.html', contexto)
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 
@@ -128,7 +128,7 @@ def criar_ticket(request):
     else:
         form = CreateTicketForm()
         contexto = {'form': form}
-        return render(request, 'agenda/criar_ticket.html', contexto)
+        return render(request, 'ticket/criar_ticket.html', contexto)
 
 
 # subindo um ticket
@@ -147,7 +147,7 @@ def subir_ticket(request, pk):
     else:
         form = UpdateTicketForm()
         contexto = {'form': form}
-        return render(request, 'agenda/subir_ticket.html', contexto)
+        return render(request, 'ticket/subir_ticket.html', contexto)
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 # lista de tickets
@@ -157,13 +157,13 @@ def subir_ticket(request, pk):
 def todos_os_tickets(request):
     tickets = Ticket.objects.filter(criado_por=request.user)
     contexto = {'tickets': tickets}
-    return render(request, 'agenda/todos_os_tickets.html', contexto)
+    return render(request, 'ticket/todos_os_tickets.html', contexto)
 
 @login_required(login_url='/login/')
 def lista_de_tickets(request):
     tickets = Ticket.objects.filter(ticket_status='Pendente')
     contexto = {'tickets': tickets}
-    return render(request, 'agenda/lista_de_tickets.html', contexto)
+    return render(request, 'ticket/lista_de_tickets.html', contexto)
 
 # aceitar um ticket da fila
 @login_required(login_url='/login/')
@@ -192,12 +192,12 @@ def fechar_ticket(request, pk):
 def area_de_trabalho(request):
     tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido = False)
     contexto = {'tickets': tickets}
-    return render(request, 'agenda/area_de_trabalho.html', contexto)
+    return render(request, 'ticket/area_de_trabalho.html', contexto)
 
 # todos os tickets resolvidos
 @login_required(login_url='/login/')
 def todos_os_tickets_fechados(request):
     tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido=True)
     contexto = {'tickets': tickets}
-    return render(request, 'agenda/todos_os_tickets_fechados.html', contexto)
+    return render(request, 'ticket/todos_os_tickets_fechados.html', contexto)
 

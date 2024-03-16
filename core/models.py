@@ -1,5 +1,4 @@
 import uuid
-
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
@@ -36,12 +35,13 @@ class Ticket(models.Model):
         ('Pendente', 'Pendente')
     )
     numero_do_ticket = models.UUIDField(default=uuid.uuid4)
-    titulo = models.CharField(max_length=150)
-    descricao = models.TextField()
+    titulo_ticket = models.CharField(max_length=150)
+    descricao_ticket = models.TextField()
     criado_por = models.ForeignKey(User, on_delete=models.CASCADE, related_name='criado_por')
     data_criada = models.DateTimeField(auto_now_add=True)
     atribuido_para = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
     foi_resolvido = models.BooleanField(default=False)
+    prazo = models.DateTimeField(null=True, blank=True)
     data_aceita = models.DateTimeField(null=True, blank=True)
     data_fechada = models.DateTimeField(null=True, blank=True)
     ticket_status = models.CharField(max_length=15, choices=status_choices)
@@ -49,3 +49,5 @@ class Ticket(models.Model):
     def __str__(self):
         return self.titulo
 
+    def get_data_input_prazo(self):
+        return self.prazo.strftime('%Y-%m-%dT%H:%M')
