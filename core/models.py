@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from datetime import datetime
 
 
@@ -35,6 +35,7 @@ class Ticket(models.Model):
         ('Pendente', 'Pendente')
     )
     numero_do_ticket = models.UUIDField(default=uuid.uuid4)
+    atribuido_para_grupo = models.ForeignKey(Group, on_delete=models.DO_NOTHING, null=True, blank=True)
     titulo_ticket = models.CharField(max_length=150)
     descricao_ticket = models.TextField()
     criado_por = models.ForeignKey(User, on_delete=models.CASCADE, related_name='criado_por')

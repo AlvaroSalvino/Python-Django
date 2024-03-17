@@ -32,11 +32,11 @@ urlpatterns = [
     path('logout/', views.logout_user),
     path('detalhes_do_ticket/<int:pk>/', views.detalhes_do_ticket, name='detalhes_do_ticket'),
     path('criar_ticket/', views.criar_ticket, name='criar_ticket'),
-    path('subir_ticket/int:pk>/', views.subir_ticket, name='subir_ticket'),
+    path('editar_ticket/<int:pk>/', views.editar_ticket, name='editar_ticket'),
     path('todos_os_tickets/', views.todos_os_tickets, name='todos_os_tickets'),
     path('lista_de_tickets/', views.lista_de_tickets, name='lista_de_tickets'),
-    path('aceitar_ticket/int:pk>/', views.aceitar_ticket, name='aceitar_ticket'),
-    path('fechar_ticket/int:pk>/', views.fechar_ticket, name='fechar_ticket'),
+    path('aceitar_ticket/<int:pk>/', views.aceitar_ticket, name='aceitar_ticket'),
+    path('fechar_ticket/<int:pk>/', views.fechar_ticket, name='fechar_ticket'),
     path('area_de_trabalho/', views.area_de_trabalho, name='area_de_trabalho'),
     path('todos_os_tickets_fechados/', views.todos_os_tickets_fechados, name='todos_os_tickets_fechados')
 ]

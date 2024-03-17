@@ -17,7 +17,12 @@
         <label class="ask">Prazo</label>
         <br>
         <input class="saf" type="datetime-local" name="prazo" value="{{ get_data_input_prazo }}">
-        <br><br>
+        <br>
+        <label class="ask">Atribuir para Grupo</label>
+        <br>
+        {% render_field form.atribuido_para_grupo class="form" %}
+        <br>
+        <br>
         <button class="submit" type="submit">Salvar</button>
         <a class="sfgsagsaglk" href="/">
             <button class="sfgsfas" type="button">Cancelar</button>

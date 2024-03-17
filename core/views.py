@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from core.models import Evento, Ticket
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http.response import Http404, JsonResponse
-from .form import CreateTicketForm, UpdateTicketForm
+from .form import CreateTicketForm, EditarTicketForm
 
 # Create your views here.
 
@@ -110,7 +111,7 @@ def detalhes_do_ticket(request, pk):
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 
-# criando o ticket
+# criar o ticket
 @login_required(login_url='/login/')
 def criar_ticket(request):
     if request.method == 'POST':
@@ -119,6 +120,7 @@ def criar_ticket(request):
             var = form.save(commit=False)
             var.criado_por = request.user
             var.ticket_status = 'Pendente'
+            var.atribuido_para_grupo = form.cleaned_data['atribuido_para_grupo']
             var.save()
             messages.info(request, 'Sua solicitação foi enviada com sucesso.')
             return redirect('criar_ticket')
@@ -131,12 +133,13 @@ def criar_ticket(request):
         return render(request, 'ticket/criar_ticket.html', contexto)
 
 
-# subindo um ticket
+
+# editar um ticket
 @login_required(login_url='/login/')
-def subir_ticket(request, pk):
+def editar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     if request.method == 'POST':
-        form = UpdateTicketForm(request.POST, instance=ticket)
+        form = EditarTicketForm(request.POST, instance=ticket)
         if form.is_valid():
             form.save()
             messages.info(request, 'As informações do seu ticket foram atualizadas e todas as alterações foram salvas.')
@@ -145,9 +148,9 @@ def subir_ticket(request, pk):
             messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
             #return redirect('create-ticket')
     else:
-        form = UpdateTicketForm()
+        form = EditarTicketForm()
         contexto = {'form': form}
-        return render(request, 'ticket/subir_ticket.html', contexto)
+        return render(request, 'ticket/editar_ticket.html', contexto)
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 # lista de tickets
@@ -155,7 +158,7 @@ def subir_ticket(request, pk):
 # viazualizar todos os tickets criados
 @login_required(login_url='/login/')
 def todos_os_tickets(request):
-    tickets = Ticket.objects.filter(criado_por=request.user)
+    tickets = Ticket.objects.filter(criado_por=request.user).order_by('-data_criada')
     contexto = {'tickets': tickets}
     return render(request, 'ticket/todos_os_tickets.html', contexto)
 
@@ -201,3 +204,6 @@ def todos_os_tickets_fechados(request):
     contexto = {'tickets': tickets}
     return render(request, 'ticket/todos_os_tickets_fechados.html', contexto)
 
+def obter_grupos(request):
+    grupos = Group.objects.all()
+    return render(request, 'ticket/criar_ticket.html', {'grupos': grupos})
