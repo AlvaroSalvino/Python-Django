@@ -15,7 +15,7 @@ from .form import CreateTicketForm, EditarTicketForm
 
 
 def login_user(request):
-    return render(request,'user/login.html')
+    return render(request, 'user/login.html')
 
 def logout_user(request):
     logout(request)

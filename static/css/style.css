@@ -281,11 +281,6 @@ form {
     margin: 1vh;
 }
 
-nav {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
 :hover.logout {
     background-color: #ff0000;
     color: white;
@@ -309,3 +304,8 @@ nav {
     color: #32717c;
 }
 
+#id {
+    align-self: center;
+    background-color: #fff;
+    border: solid #000 1px;
+}

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
+
 <head>
     {% include "models/model-header.html" %}
 </head>
-<body>
+
+<body style="margin: 0;">
+    {% if request.user.is_authenticated %}
+    <header>
+        <nav>
+            <a href="/agenda"><button>Agenda</button></a>
+            <a href="/area_de_trabalho"><button>Area de Trabalho</button></a>
+            <a href="/lista_de_tickets"><button>Chamados</button></a>
+            <a href="/todos_os_tickets_fechados"><button>Chamados Fechados</button></a>
+            <a href="/logout"><button>LOGOUT</button></a>
+            <a href="javascript:history.back()"><button>Voltar</button></a>
+        </nav>
+    </header>  
+    {% endif %} 
     <main>
         {% block content %} {% endblock %}
     </main>
     {% include "models/model-footer.html" %}
 </body>
+
 </html>
