@@ -7,6 +7,10 @@ body {
     background: -webkit-linear-gradient(#363636, #050505);
 }
 
+h2{
+    color: #fff;
+}
+
 main {
     min-height: 850px;
 }
