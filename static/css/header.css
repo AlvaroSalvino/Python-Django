@@ -2,7 +2,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: transparent;
+    background-color: #000;
     width: 100%;
     height: 6vh;
 }
