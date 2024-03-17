@@ -46,11 +46,11 @@
             </div>
         </div>
         <br>
-        {% if ticket.atribuido_para_grupo in request.user.groups.all %}
-        <a href="#">Resolvido</a>
+        {% if ticket.atribuido_para_grupo in request.user.groups.all and not ticket.foi_resolvido %}
+        <a href="{% url 'fechar_ticket' ticket.pk %}">Resolvido</a>
         {% endif %}
 
-        {% if request.user == ticket.criado_por %}
+        {% if request.user == ticket.criado_por and not ticket.foi_resolvido %}
         <a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a>
         {% endif %}
 

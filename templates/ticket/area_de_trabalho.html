@@ -3,6 +3,11 @@
 {% block content %}
 
 <div style="width: 76rem;">
+    {% for message in messages %}
+    <div align="center">
+        {{ message }}
+    </div>
+    {% endfor %}
     <div>
         <h5>Área de Trabalho</h5>
 

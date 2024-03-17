@@ -142,19 +142,23 @@ def criar_ticket(request):
 @login_required(login_url='/login/')
 def editar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
-    if request.method == 'POST':
-        form = EditarTicketForm(request.POST, instance=ticket)
-        if form.is_valid():
-            form.save()
-            messages.info(request, 'As informações do seu ticket foram atualizadas e todas as alterações foram salvas.')
-            return redirect('agenda')
+    if not ticket.foi_resolvido:
+        if request.method == 'POST':
+            form = EditarTicketForm(request.POST, instance=ticket)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'As informações do seu ticket foram atualizadas e todas as alterações foram salvas.')
+                return redirect('editar_ticket')
+            else:
+                messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
+                #return redirect('create-ticket')
         else:
-            messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
-            #return redirect('create-ticket')
+            form = EditarTicketForm()
+            contexto = {'form': form}
+            return render(request, 'ticket/editar_ticket.html', contexto)
     else:
-        form = EditarTicketForm()
-        contexto = {'form': form}
-        return render(request, 'ticket/editar_ticket.html', contexto)
+        messages.warning(request, 'Você não pode mais fazer alterações!')
+        return redirect('area_de_trabalho')
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 # lista de tickets
@@ -190,7 +194,7 @@ def fechar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     ticket.ticket_status = 'Completo'
     ticket.foi_resolvido = True
-    ticket.data_fechada = datetime.datetime.now()
+    ticket.data_fechada = datetime.now()
     ticket.save()
     messages.info(request, 'O ticket foi resolvido. Obrigado, brilhante suporte!')
     return redirect('todos_os_tickets')
@@ -207,7 +211,7 @@ def area_de_trabalho(request):
 # todos os tickets resolvidos
 @login_required(login_url='/login/')
 def todos_os_tickets_fechados(request):
-    tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido=True)
+    tickets = Ticket.objects.filter(atribuido_para_id=request.user, foi_resolvido=True)
     contexto = {'tickets': tickets}
     return render(request, 'ticket/todos_os_tickets_fechados.html', contexto)
 
