@@ -4,7 +4,7 @@
 
 <div>
     <div>
-        <h5>{{ticket.titulo_ticket}}</h5>
+        <h1>{{ticket.titulo_ticket}}</h1>
         <p>{{ticket.descricao_ticket}}</p>
 
         <div>
@@ -12,13 +12,59 @@
                 <b>Data da Criação do Ticket</b> {{ticket.data_criada}}
             </div>
             <div>
-                <b>Atribuido para:</b> {{ticket.atribuido_para_grupo}}
+                <b>Atribuido para:</b> {{ticket.atribuido_para}}
+            </div>
+            <div>
+                <b>Setor:</b> {{ticket.atribuido_para_grupo}}
+            </div>
+        </div>
+        <div>
+            <div>
+                {% if ticket.foi_resolvido %}
+                <b>Já foi resolvido?</b> <span class="status completo">Foi Resolvido</span>
+                {% else %}
+                <b>Já foi resolvido?</b> <span class="status ativo">Ainda não</span>
+                {% endif %}
+            </div>
+            <div>
+                <b>Número do chamado:</b> <small>{{ticket.numero_do_ticket}}</small>
             </div>
         </div>
 
+        <div>
+            <div>
+                <b>Data que foi aceita:</b> {{ticket.data_aceita}}
+            </div>
+            <div>
+                <b>Criado por:</b> {{ticket.criado_por}}
+            </div>
+            <div>
+                <b>Prazo:</b> {{ticket.prazo}}
+            </div>
+            <div>
+                <b>Status do chamado:</b> <small>{{ticket.ticket_status}}</small>
+            </div>
+        </div>
+        <br>
+        {% if ticket.atribuido_para_grupo in request.user.groups.all %}
+        <a href="#">Resolvido</a>
+        {% endif %}
+
+        {% if request.user == ticket.criado_por %}
+        <a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a>
+        {% endif %}
+
+
+        <div>
+            <h1>Todos os chamados criados por {{ticket.criado_por}}</h1>
+            {% for ticket in tickets_por_usuer %}
+            <p>{{ticket.numero_do_ticket}} - {{ticket.titulo_ticket}} - {{ticket.prazo}}<a
+                    href="{% url 'detalhes_do_ticket' ticket.pk %}">(view)</a></p>
+            {% endfor %}
+
+        </div>
     </div>
-</div>
 
 
 
-{% endblock content %}
+    {% endblock content %}

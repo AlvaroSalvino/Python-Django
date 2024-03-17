@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from core.models import Evento, Ticket
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from datetime import datetime, timedelta
@@ -104,9 +104,13 @@ def json_lista_evento(request):
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 
 # ver detalhes do ticket
+@login_required(login_url='/login/')
+
 def detalhes_do_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
-    contexto = {'tickets': ticket}
+    t = User.objects.get(username=ticket.criado_por)
+    tickets_por_usuer = t.criado_por.all()
+    contexto = {'ticket': ticket, 'tickets_por_usuer':tickets_por_usuer}
     return render(request, 'ticket/detalhes_do_ticket.html', contexto)
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
