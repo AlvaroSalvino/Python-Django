@@ -1,0 +1,24 @@
+{% extends "models/model-page.html" %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h5>{{ticket.titulo_ticket}}</h5>
+        <p>{{ticket.descricao_ticket}}</p>
+
+        <div>
+            <div>
+                <b>Data da Criação do Ticket</b> {{ticket.data_criada}}
+            </div>
+            <div>
+                <b>Atribuido para:</b> {{ticket.atribuido_para_grupo}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}

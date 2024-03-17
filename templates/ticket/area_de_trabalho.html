@@ -4,7 +4,7 @@
 
 <div style="width: 76rem;">
     <div>
-        <h5>Todos os Chamados</h5>
+        <h5>Área de Trabalho</h5>
 
         <table>
             <thead>
@@ -13,7 +13,7 @@
                     <th scope="col">Título</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Criado em</th>
-                    <th scope="col">Atribuído para</th>
+                    <th scope="col">Criado por</th>
                     <th scope="col">Status</th>
                     <th scope="col">Prazo</th>
                     <th scope="col">Acao</th>
@@ -26,11 +26,7 @@
                     <td><small>{{ticket.titulo_ticket}}</small></td>
                     <td><small>{{ticket.descricao_ticket}}</small></td>
                     <td><small>{{ticket.data_criada}}</small></td>
-                    {% if ticket.atribuido_para_grupo %}
-                    <td><small>{{ ticket.atribuido_para_grupo.name }}</small></td>
-                    {% else %}
-                    <td><small>Não atribuído</small></td>
-                    {% endif %}
+                    <td>{{ticket.criado_por}}</td>
                     {% if ticket.ticket_status == 'Ativo' %}
                     <td><span class="status ativo">Ativo</span></td>
                     {% elif ticket.ticket_status == 'Pendente' %}
@@ -39,7 +35,7 @@
                     <td><span class="status completo">Completo</span></td>
                     {% endif %}
                     <td><small>{{ ticket.prazo }}</small></td>
-                    <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver detalhes</a></small></td>
+                    <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver Detalhes</a></small></td>
                 </tr>
                 {% endfor %}
             </tbody>

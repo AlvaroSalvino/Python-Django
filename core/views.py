@@ -174,10 +174,11 @@ def aceitar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     ticket.atribuido_para = request.user
     ticket.ticket_status = 'Ativo'
-    ticket.data_aceita = datetime.datetime.now()
+    ticket.data_aceita = datetime.now()
     ticket.save()
     messages.info(request, 'O ticket foi aceito. Por favor, resolva o mais rápido possível!')
-    return redirect('todos_os_tickets')
+    return redirect('area_de_trabalho')
+
 
 # fechar ticket
 @login_required(login_url='/login/')
@@ -193,9 +194,11 @@ def fechar_ticket(request, pk):
 # ticket no qual está trabalhando
 @login_required(login_url='/login/')
 def area_de_trabalho(request):
-    tickets = Ticket.objects.filter(atribuio_para=request.user, foi_resolvido = False)
+    grupo_do_usuario = request.user.groups.first()  # Obter o primeiro grupo do usuário
+    tickets = Ticket.objects.filter(atribuido_para_grupo=grupo_do_usuario, foi_resolvido=False)
     contexto = {'tickets': tickets}
     return render(request, 'ticket/area_de_trabalho.html', contexto)
+
 
 # todos os tickets resolvidos
 @login_required(login_url='/login/')
