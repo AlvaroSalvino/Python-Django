@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 from django.views.generic import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,4 +41,4 @@ urlpatterns = [
     path('fechar_ticket/<int:pk>/', views.fechar_ticket, name='fechar_ticket'),
     path('area_de_trabalho/', views.area_de_trabalho, name='area_de_trabalho'),
     path('todos_os_tickets_fechados/', views.todos_os_tickets_fechados, name='todos_os_tickets_fechados')
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
