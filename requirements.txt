@@ -5,3 +5,4 @@ mysql==0.0.3
 mysqlclient==2.2.4
 sqlparse==0.4.4
 tzdata==2024.1
+csrf==0.1b1
