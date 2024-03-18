@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-j4bgv@f@mm0)z6n6)908+#tt!71!)1o@a9^#$v*5!ggl(#weby
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['node83a.containers.back4app.com', 'maltagesto-iyotfj7i.b4a.run']
+ALLOWED_HOSTS = ['node83a.containers.back4app.com', 'maltagesto-iyotfj7i.b4a.run', 'maltagesto-iyotfj7i.b4a.run']
 
 # Application definition
 
