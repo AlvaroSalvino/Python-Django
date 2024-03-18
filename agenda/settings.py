@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['maltagesto-iyotfj7i.b4a.run', 'node84a.containers.back4app.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
-CSRF_TRUSTED_ORIGINS = ['maltagesto-iyotfj7i.b4a.run']
+CSRF_TRUSTED_ORIGINS = ['https://maltagesto-iyotfj7i.b4a.run']
 
 # Application definition
 
