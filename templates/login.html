@@ -3,7 +3,8 @@
 {% block content %}
     <div>
         <h1 >Login</h1>
-        <form action="submit" method="POST">{% csrf_token %}
+        {% csrf_token %}
+        <form action="submit" method="POST">
             <div id="formulario">
                 <div class="">
                     <div class="formname">
