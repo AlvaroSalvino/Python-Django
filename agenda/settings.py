@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 from django.core.management.commands.runserver import Command as runserver
 
-runserver.default_port = '8080'
+runserver.default_port = '8000'
 runserver.default_addr = '127.0.0.1'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
