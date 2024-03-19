@@ -1,0 +1,29 @@
+{
+  "name": "Malta Gestao",
+  "short_name": "Malta_Gestao",
+  "description": "Aplicativo para gestão profisssional na Malta Faculdade",
+  "start_url": "https://maltagesto-iyotfj7i.b4a.run/",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#f5f5f5",
+  "icons": [
+    {
+      "src": "/staticfiles/image/malta-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/staticfiles/image/malta-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/staticfiles/image/malta-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
