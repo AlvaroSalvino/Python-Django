@@ -8,9 +8,9 @@
     "theme_color": "#f5f5f5",
     "icons": [
       {
-        "src": "/static/images/malta.ico",
-        "sizes": "192x192",
-        "type": "image/ico"
+        "src": "/static/images/malta.png",
+        "sizes": "512x366",
+        "type": "image/png"
       }
     ]
   }
