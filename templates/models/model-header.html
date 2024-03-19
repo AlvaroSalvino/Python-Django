@@ -2,6 +2,14 @@
 <html lang="pt-br">
 <meta charset="UTF-8">
 <title>Agenda</title>
+<link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/header.css' %}">
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/static/service-worker.js');
+      });
+    }
+    </script>    
 </html>
