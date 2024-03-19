@@ -8,19 +8,19 @@
   "theme_color": "#f5f5f5",
   "icons": [
     {
-      "src": "/staticfiles/image/malta-192.png",
+      "src": "/image/malta-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/staticfiles/image/malta-144.png",
+      "src": "/image/malta-144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/staticfiles/image/malta-512.png",
+      "src": "/image/malta-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
