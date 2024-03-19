@@ -2,8 +2,8 @@ var CACHE_NAME = 'malta-gestao-cache-v1';
 
 var urlsToCache = [
   '/',
-  'style.css',
-  'header.css',
+  'css/style.css',
+  'css/header.css',
 ];
 
 self.addEventListener('install', function(event) {
