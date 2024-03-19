@@ -14,6 +14,12 @@
       "purpose": "maskable"
     },
     {
+      "src": "/staticfiles/image/malta-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/staticfiles/image/malta-512.png",
       "sizes": "512x512",
       "type": "image/png",
