@@ -40,6 +40,5 @@ urlpatterns = [
     path('aceitar_ticket/<int:pk>/', views.aceitar_ticket, name='aceitar_ticket'),
     path('fechar_ticket/<int:pk>/', views.fechar_ticket, name='fechar_ticket'),
     path('area_de_trabalho/', views.area_de_trabalho, name='area_de_trabalho'),
-    path('todos_os_tickets_fechados/', views.todos_os_tickets_fechados, name='todos_os_tickets_fechados'),
-    path('manifest.json/')
+    path('todos_os_tickets_fechados/', views.todos_os_tickets_fechados, name='todos_os_tickets_fechados')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
