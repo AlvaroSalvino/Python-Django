@@ -6,12 +6,5 @@
 <meta name="theme-color" content="#317EFB">
 <link rel="manifest" href="{% static 'manifest.json' %}" crossorigin="use-credentials">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" href="{% static 'css/header.css' %}">
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/static/service-worker.js');
-      });
-    }
-    </script>    
+<link rel="stylesheet" href="{% static 'css/header.css' %}">  
 </html>

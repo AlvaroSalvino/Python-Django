@@ -2,6 +2,13 @@
 
 <head>
     {% include "models/model-header.html" %}
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/static/service-worker.js');
+            });
+        }
+    </script>
 </head>
 
 <body style="margin: 0;">
@@ -16,8 +23,8 @@
             <a href="/logout"><button>LOGOUT</button></a>
             <a href="javascript:history.back()"><button>Voltar</button></a>
         </nav>
-    </header>  
-    {% endif %} 
+    </header>
+    {% endif %}
     <main>
         {% block content %} {% endblock %}
     </main>
