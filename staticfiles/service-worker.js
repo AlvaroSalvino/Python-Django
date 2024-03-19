@@ -2,7 +2,6 @@ var CACHE_NAME = 'malta-gestao-cache-v1';
 
 var urlsToCache = [
   '/',
-  '/static/images/malta.ico',
   '/static/style.css',
   '/static/header.css',
 ];
