@@ -12,8 +12,32 @@ span{
 }
 
 body {
-    background: -webkit-linear-gradient(#363636, #050505);
+    background-color: #333;
 }
+
+#main-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+#main-nav .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #ddd;
+}
+    
 
 h2{
     color: #fff;
