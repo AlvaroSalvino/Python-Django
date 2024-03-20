@@ -7,18 +7,18 @@
 <div class="createevento">
     <form class="formevento" method="POST">{% csrf_token %}
         {% csrf_token %}
-        <label class="ask">Atribuir para Grupo</label>
+        <label class="ask">Atribuir para Grupo <span>*</span></label>
         <br>
         {% render_field form.atribuido_para_grupo class="form" %}
         <br>
-        <label class="ask">Ttulo</label>
+        <label class="ask">Título <span>*</span></label>
         {% render_field form.titulo_ticket class="form" %}
         <br>
         <label class="ask">Descrição</label>
         <br>
         {% render_field form.descricao_ticket class="form" %}
         <br>
-        <label class="ask">Prazo</label>
+        <label class="ask">Prazo <span>*</span></label>
         <br>
         <input class="saf" type="datetime-local" name="prazo" value="{{ get_data_input_prazo }}">
         <br>

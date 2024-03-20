@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+span{
+    color: red;
+}
+
 body {
     background: -webkit-linear-gradient(#363636, #050505);
 }

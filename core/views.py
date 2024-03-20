@@ -153,7 +153,7 @@ def editar_ticket(request, pk):
                 messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
                 #return redirect('create-ticket')
         else:
-            form = EditarTicketForm()
+            form = EditarTicketForm(instance=ticket)  # Pass the ticket instance here
             contexto = {'form': form}
             return render(request, 'ticket/editar_ticket.html', contexto)
     else:

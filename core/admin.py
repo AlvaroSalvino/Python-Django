@@ -9,8 +9,8 @@ class EventoAdmin(admin.ModelAdmin):
 
 admin.site.register(Evento, EventoAdmin)
 
-#class TicketAdmin(admin.ModelAdmin):
-#    list_display = ('numero_do_ticket','titulo_ticket', 'criado_por_id', 'prazo', 'data_criada', 'ticket_status', 'foi_resolvido', 'atribuido_para_id')
-#    list_filter = ('numero_do_ticket','titulo', 'data_criada', 'ticket_status', 'foi_resolvido', 'atribuido_para_id')
+class TicketAdmin(admin.ModelAdmin):
+    list_display = ('id','titulo_ticket', 'criado_por', 'atribuido_para', 'atribuido_para_grupo')
+    list_filter = ('titulo_ticket', 'criado_por', 'atribuido_para', 'atribuido_para_grupo')
 
-#admin.site.register(Ticket, TicketAdmin)
+admin.site.register(Ticket, TicketAdmin)
