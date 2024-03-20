@@ -4,7 +4,7 @@ header {
     justify-content: space-around;
     background-color: #000;
     width: 100%;
-    height: 6vh;
+    height: 9vh;
 }
 
 main th {
@@ -36,6 +36,7 @@ nav {
     display: flex;
     flex-direction: row;
     border-bottom: solid 1px #000;
+    margin: 0 2vw;
 }
 
 nav a {

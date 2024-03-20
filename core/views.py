@@ -101,7 +101,6 @@ def json_lista_evento(request):
     evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
     return JsonResponse(list(evento), safe=False)
 
-
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 
 # ver detalhes do ticket
@@ -110,15 +109,13 @@ def detalhes_do_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     t = User.objects.get(username=ticket.criado_por)
     tickets_por_usuer = t.criado_por.all()
-
-    if not (request.user.groups.filter(name=ticket.criado_por_grupo).exists() or
-            request.user.groups.filter(name=ticket.atribuido_para_grupo).exists() or
-            request.user.is_superuser):
-        messages.error(request, 'Você não tem permissão para ver os detalhes deste ticket.')
-        return redirect('nome_da_sua_view_de_redirecionamento')
-
     contexto = {'ticket': ticket, 'tickets_por_usuer':tickets_por_usuer}
     return render(request, 'ticket/detalhes_do_ticket.html', contexto)
+
+@login_required(login_url='/login/')
+def meus_chamados(request):
+    tickets = Ticket.objects.filter(criado_por=request.user)
+    return render(request, 'ticket/meus_chamados.html', {'tickets': tickets})
 
 """/////////////////////////////////////////////////////////////////////////////////////////////"""
 
@@ -232,11 +229,10 @@ def fechar_ticket(request, pk):
 # ticket no qual está trabalhando
 @login_required(login_url='/login/')
 def area_de_trabalho(request):
-    grupo_do_usuario = request.user.groups.first()  # Obter o primeiro grupo do usuário
+    grupo_do_usuario = request.user.groups.first()
     tickets = Ticket.objects.filter(atribuido_para_grupo=grupo_do_usuario, foi_resolvido=False)
     contexto = {'tickets': tickets}
     return render(request, 'ticket/area_de_trabalho.html', contexto)
-
 
 # todos os tickets resolvidos
 @login_required(login_url='/login/')

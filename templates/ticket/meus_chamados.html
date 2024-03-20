@@ -1,0 +1,25 @@
+{% extends "models/model-page.html" %}
+
+{% block content %}
+<h1>Meus Chamados</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID do chamado</th>
+            <th>Título</th>
+            <th>Status</th>
+            <th>Prazo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.numero_do_ticket }}</td>
+            <td>{{ ticket.titulo_ticket }}</td>
+            <td>{{ ticket.ticket_status }}</td>
+            <td>{{ ticket.prazo }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
