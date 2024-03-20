@@ -10,22 +10,24 @@
         }
     </script>
 </head>
-    {% if request.user.is_authenticated %}
     <header id="main-header">
         <nav id="main-nav">
             <ul class="nav-list">
-                <li><a href="/agenda">Agenda</a></li>
-                <li><a href="/area_de_trabalho">Área de Trabalho</a></li>
-                <li><a href="/lista_de_tickets">Chamados</a></li>
-                <li><a href="/meus_chamados">Meus Chamados em aberto</a></li>
-                <li><a href="/todos_os_tickets_fechados">Chamados Fechados</a></li>
-                <li><a href="/criar_ticket">Abrir Chamado</a></li>
-                <li><a href="/logout">LOGOUT</a></li>
-                <li><a href="javascript:history.back()">Voltar</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="/agenda">Agenda</a></li>
+                    <li><a href="/area_de_trabalho">Área de Trabalho</a></li>
+                    <li><a href="/lista_de_tickets">Chamados</a></li>
+                    <li><a href="/meus_chamados">Meus Chamados em aberto</a></li>
+                    <li><a href="/todos_os_tickets_fechados">Chamados Fechados</a></li>
+                    <li><a href="/criar_ticket">Abrir Chamado</a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                    <li><a href="javascript:history.back()">Voltar</a></li>
+                {% else %}
+                    <li><a href="/login">Log in</a></li>
+                {% endif %}
             </ul>
         </nav>
-    </header>    
-    {% endif %}
+    </header>
     <main>
         {% block content %} {% endblock %}
     </main>
