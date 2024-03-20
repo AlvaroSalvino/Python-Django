@@ -175,9 +175,15 @@ def todos_os_tickets(request):
 
 @login_required(login_url='/login/')
 def lista_de_tickets(request):
-    tickets = Ticket.objects.filter(ticket_status='Pendente')
+    # Obtém todos os grupos aos quais o usuário pertence
+    user_groups = request.user.groups.all()
+
+    # Filtra os tickets pelo status 'Pendente' e pelos grupos do usuário
+    tickets = Ticket.objects.filter(ticket_status='Pendente', atribuido_para_grupo__in=user_groups)
+
     contexto = {'tickets': tickets}
     return render(request, 'ticket/lista_de_tickets.html', contexto)
+
 
 # aceitar um ticket da fila
 @login_required(login_url='/login/')

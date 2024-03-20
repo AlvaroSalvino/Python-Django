@@ -3,6 +3,25 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-background-light: #ffffff;
+    --color-text-light: #000000;
+    --color-background-dark: #000000;
+    --color-text-dark: #ffffff;
+  }
+  
+  body {
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  body.dark-mode {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+  }
+  
+
 span{
     color: red;
 }
