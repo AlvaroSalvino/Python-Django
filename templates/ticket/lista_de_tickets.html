@@ -40,6 +40,11 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% for message in messages %}
+        <div id="mensagem">
+            <strong>Erro </strong>{{ message }}
+        </div>
+        {% endfor %}
     </div>
 </div>
 <div></div>

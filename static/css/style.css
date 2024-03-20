@@ -7,6 +7,10 @@ span{
     color: red;
 }
 
+#fechar-ticket-form {
+    transition: opacity 2s ease-in-out;
+}
+
 body {
     background: -webkit-linear-gradient(#363636, #050505);
 }

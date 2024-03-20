@@ -1,11 +1,12 @@
 {% extends "models/model-page.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
 
 <div>
     <div>
         <h1>{{ticket.titulo_ticket}}</h1>
-        <p>{{ticket.descricao_ticket}}</p>
+        <p>{{ticket.descricao_ticket|linebreaks}}</p>
 
         <div>
             <div>
@@ -47,13 +48,21 @@
         </div>
         <br>
         {% if ticket.atribuido_para_grupo in request.user.groups.all and not ticket.foi_resolvido %}
-        <a href="{% url 'fechar_ticket' ticket.pk %}">Resolvido</a>
+        <a href="#" id="resolvido-btn">Resolvido</a>
+        <div id="fechar-ticket-form" style="display: none;">
+            <form method="POST" action="{% url 'fechar_ticket' ticket.pk %}">
+                {% csrf_token %}
+                <label for="resposta">Resposta:</label>
+                <input type="text" id="resposta" name="resposta_fechamento">
+                <button type="submit">Fechar Chamado</button>
+            </form>
+        </div>
         {% endif %}
 
         {% if request.user == ticket.criado_por and not ticket.foi_resolvido %}
         <a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a>
         {% endif %}
-
+        
 
         <div>
             <h1>Todos os chamados criados por {{ticket.criado_por}}</h1>
@@ -64,7 +73,13 @@
 
         </div>
     </div>
+</div>
+<script>
+    document.getElementById('resolvido-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('fechar-ticket-form').style.display = 'block';
+});
+</script>
 
 
-
-    {% endblock content %}
+{% endblock content %}

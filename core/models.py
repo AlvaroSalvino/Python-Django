@@ -46,6 +46,8 @@ class Ticket(models.Model):
     data_aceita = models.DateTimeField(null=True, blank=True)
     data_fechada = models.DateTimeField(null=True, blank=True)
     ticket_status = models.CharField(max_length=15, choices=status_choices)
+    resposta_fechamento = models.TextField()
+    tempo_resposta_fechamento = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         db_table = 'ticket'
@@ -57,13 +59,15 @@ class Ticket(models.Model):
         return self.data_evento.strftime('%d/%m/%Y %H Hrs')
 
     def get_data_criada(self):
-        return self.data_evento.strftime('%d/%m/%Y %H Hrs')
+        return self.data_criada.strftime('%d/%m/%Y %H Hrs')
 
     def get_data_aceita(self):
-        return self.data_evento.strftime('%d/%m/%Y %H Hrs')
+        return self.data_aceita.strftime('%d/%m/%Y %H Hrs')
 
     def get_data_fechada(self):
-        return self.data_evento.strftime('%d/%m/%Y %H Hrs')
+        return self.data_fechada.strftime('%d/%m/%Y %H Hrs')
 
     def get_data_input_prazo(self):
         return self.prazo.strftime('%Y-%m-%dT%H')
+    def get_tempo_resposta_fechamento(self):
+        return self.tempo_resposta_fechamento.strftime('%d/%m/%Y %H Hrs')

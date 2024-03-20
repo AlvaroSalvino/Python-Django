@@ -4,9 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 from datetime import datetime, timedelta
 from django.http.response import Http404, JsonResponse
-from .form import CreateTicketForm, EditarTicketForm
+from .form import CreateTicketForm, EditarTicketForm, FecharTicketForm
 
 # Create your views here.
 
@@ -105,11 +106,17 @@ def json_lista_evento(request):
 
 # ver detalhes do ticket
 @login_required(login_url='/login/')
-
 def detalhes_do_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
     t = User.objects.get(username=ticket.criado_por)
     tickets_por_usuer = t.criado_por.all()
+
+    if not (request.user.groups.filter(name=ticket.criado_por_grupo).exists() or
+            request.user.groups.filter(name=ticket.atribuido_para_grupo).exists() or
+            request.user.is_superuser):
+        messages.error(request, 'Você não tem permissão para ver os detalhes deste ticket.')
+        return redirect('nome_da_sua_view_de_redirecionamento')
+
     contexto = {'ticket': ticket, 'tickets_por_usuer':tickets_por_usuer}
     return render(request, 'ticket/detalhes_do_ticket.html', contexto)
 
@@ -151,9 +158,8 @@ def editar_ticket(request, pk):
                 return redirect('editar_ticket')
             else:
                 messages.warning(request, 'algo deu errado. Por favor, verifique as informações do formulário.')
-                #return redirect('create-ticket')
         else:
-            form = EditarTicketForm(instance=ticket)  # Pass the ticket instance here
+            form = EditarTicketForm(instance=ticket)
             contexto = {'form': form}
             return render(request, 'ticket/editar_ticket.html', contexto)
     else:
@@ -180,23 +186,47 @@ def lista_de_tickets(request):
 @login_required(login_url='/login/')
 def aceitar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
-    ticket.atribuido_para = request.user
-    ticket.ticket_status = 'Ativo'
-    ticket.data_aceita = datetime.now()
-    ticket.save()
-    messages.info(request, 'O ticket foi aceito. Por favor, resolva o mais rápido possível!')
+    if request.user.groups.filter(name=ticket.atribuido_para_grupo.name).exists():
+        ticket.atribuido_para = request.user
+        ticket.ticket_status = 'Ativo'
+        ticket.data_aceita = datetime.now()
+        ticket.save()
+        messages.info(request, 'O ticket foi aceito. Por favor, resolva o mais rápido possível!')
+    else:
+        messages.warning(request, 'Você não tem permissão para aceitar este ticket.')
     return redirect('area_de_trabalho')
 
 
+
 # fechar ticket
+#@login_required(login_url='/login/')
+#def fechar_ticket(request, pk):
+#    ticket = Ticket.objects.get(pk=pk)
+#    ticket.ticket_status = 'Completo'
+#    ticket.foi_resolvido = True
+#    ticket.data_fechada = datetime.now()
+#    ticket.save()
+#    messages.info(request, 'O ticket foi resolvido. Obrigado, brilhante suporte!')
+#    return redirect('todos_os_tickets')
+
 @login_required(login_url='/login/')
 def fechar_ticket(request, pk):
     ticket = Ticket.objects.get(pk=pk)
-    ticket.ticket_status = 'Completo'
-    ticket.foi_resolvido = True
-    ticket.data_fechada = datetime.now()
-    ticket.save()
-    messages.info(request, 'O ticket foi resolvido. Obrigado, brilhante suporte!')
+    if request.method == 'POST':
+        form = FecharTicketForm(request.POST, instance=ticket)
+        if form.is_valid():
+            ticket = form.save(commit=False)
+            ticket.ticket_status = 'Completo'
+            ticket.foi_resolvido = True
+            ticket.data_fechada = datetime.now()
+            ticket.tempo_resposta_fechamento = datetime.now()
+            ticket.save()
+            messages.info(request, 'O ticket foi resolvido. Obrigado, brilhante suporte!')
+        else:
+            messages.error(request, 'Algo deu errado. Por favor, verifique as informações do formulário.')
+    else:
+        form = FecharTicketForm(instance=ticket)
+    contexto = {'form': form}
     return redirect('todos_os_tickets')
 
 # ticket no qual está trabalhando

@@ -5,14 +5,19 @@ from .models import Ticket
 class CreateTicketForm(forms.ModelForm):
     class Meta:
         db_table = 'ticket'
-        atribuido_para_grupo = forms.ModelChoiceField(queryset=Group.objects.all(), required=False)
+        atribuido_para_grupo = forms.ModelChoiceField(queryset=Group.objects.all(), required=True)
         model = Ticket
         fields = ['titulo_ticket', 'descricao_ticket', 'prazo', 'atribuido_para_grupo']
 
 class EditarTicketForm(forms.ModelForm):
     class Meta:
         db_table = 'ticket'
-        atribuido_para_grupo = forms.ModelChoiceField(queryset=Group.objects.all(), required=False)
+        atribuido_para_grupo = forms.ModelChoiceField(queryset=Group.objects.all(), required=True)
         model = Ticket
         fields = ['titulo_ticket', 'descricao_ticket', 'prazo', 'atribuido_para_grupo']
+
+class FecharTicketForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['resposta_fechamento']
 
