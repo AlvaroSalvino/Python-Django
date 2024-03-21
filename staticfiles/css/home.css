@@ -11,7 +11,7 @@ body {
 }
 
 .banner {
-    background-image: #333, url(../image/malta-gestao.jpg);
+    background-color: #333;
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
@@ -61,7 +61,7 @@ h4 {
     font-size: 2rem;
 }
 
-p {
+.p-home {
     margin-bottom: 10px;
     color: #f1f1f1;
     font-weight: 700;
@@ -76,16 +76,16 @@ ul li {
     color: #f1f1f1;
 }
 
-a {
+.a-home {
     color: #f1f1f1;
     text-decoration: none;
 }
 
-a:hover {
+.a-home:hover {
     color: #f1f1f1;
 }
 
-button {
+.btn-home {
     background-color: #586c8f;
     color: #f1f1f1;
     border: none;
@@ -98,6 +98,6 @@ button {
     font-weight: 700;
 }
 
-button:hover {
+.btn-home:hover {
     background-color: #5777af;
 }
