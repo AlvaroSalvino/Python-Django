@@ -1,7 +1,7 @@
 # Use a imagem oficial do Python 3.12
 FROM python:3.12-slim
 
-# Defina o diretório de trabalho
+# Defina o diretório de trabalho 
 WORKDIR /app
 
 # Instale as dependências necessárias
