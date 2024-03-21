@@ -83,9 +83,13 @@ h1 {
 }
 
 #formulario {
-    max-width: 26rem;
+    min-height: 26rem;
+    min-width: 26rem;
     background-color: white;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .createevento {
