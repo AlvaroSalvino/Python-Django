@@ -2,7 +2,7 @@
 FROM python:3.12-slim
 
 # Defina o diretório de trabalho
-WORKDIR /app
+WORKDIR /main
 
 # Instale as dependências necessárias
 RUN apt-get update && apt-get install -y \
