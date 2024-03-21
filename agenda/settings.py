@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['maltagesto-iyotfj7i.b4a.run', 'node85a.containers.back4app.com
 
 CSRF_TRUSTED_ORIGINS = ['https://maltagesto-iyotfj7i.b4a.run']
 
-
 # Application definition
 
 INSTALLED_APPS = [
