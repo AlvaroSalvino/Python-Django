@@ -11,7 +11,7 @@ body {
 }
 
 .banner {
-    background-image: #333, url(../image/malta-gestao.png);
+    background-image: #333, url(../image/malta-gestao.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
