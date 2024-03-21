@@ -1,0 +1,350 @@
+* {
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+span{
+    color: red;
+}
+
+#fechar-ticket-form {
+    transition: opacity 2s ease-in-out;
+}
+
+body {
+    background-color: #333;
+}
+
+#main-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+#main-nav .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #ddd;
+}
+    
+
+h2{
+    color: #fff;
+}
+
+main {
+    min-height: 850px;
+}
+
+h1 {
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.eventos {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.listaeventos {
+    font-size: 18px;
+    background-color: transparent;
+    color: black;
+}
+
+.eventoslista {
+    background-color: transparent;
+}
+
+#username{
+    background-color: white;
+    padding: 2px 25px;
+}
+
+#password{
+    padding: 2px 25px;
+}
+
+#formulario {
+    min-height: 26rem;
+    min-width: 26rem;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.createevento {
+    display: flex;
+    justify-content: center;
+}
+
+.novoevento {
+    border-radius: 30px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    margin: 1rem 0 0 2.5rem;
+}
+
+.saf {
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+}
+
+.skfie {
+    background-color: white;
+}
+
+.submit {
+    border-radius: 30px;
+    border: 0px;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #125c69e3;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+:hover.submit{
+    color: white;
+    background: #ff7300;
+    box-shadow: white;
+}
+
+.sfgsagsaglk {
+    border-radius: 30px;
+    border: 0px;
+    padding: 0.3rem 0.7rem;
+    background: #ff0000;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+:hover.sfgsagsaglk{
+    color: white;
+    background: #ff7300;
+    box-shadow: white;
+}
+
+.sfgsfas {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.inputtitulo {
+    display: flex;
+    height: 2rem;
+    text-transform: capitalize;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+}
+
+.novoeventoa {
+    border-radius: 30px;
+    border: 0px;
+    padding: 0.3rem 0.7rem;
+    font-size: 15px;
+    font-weight: 700;
+    background: #125c69e3;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.ask {
+    color: black;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+:hover.novoeventoa{
+    color: white;
+    background: #ff7300;
+    box-shadow: white;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+.formevento {
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: white;
+    display: grid;
+}
+
+div{
+    color: white;
+    display: block;
+    background-color: transparent;
+}
+
+.author{
+    margin-left: 0.4rem;
+    color: #fff;
+    cursor: pointer;
+}
+:hover.author {
+    color: aqua;
+    font-weight: 800;
+}
+
+.svgemail {
+    background-color: white;
+    color: rgb(156, 145, 219);
+}
+
+.svgsenha {
+    background-color: white;
+    color: rgb(156, 145, 219);
+}
+
+#password {
+    background-color: white;
+}
+
+.footer {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    bottom: 1px;
+    color: #fff;
+}
+
+.alteration {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+}
+
+.formname{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 5rem;
+    margin: 1.5rem 0px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    position: relative;
+    transition: border-color 0.15s ease 0s;
+}
+
+.formsenha{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 5rem;
+    margin: 1.5rem 0px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    position: relative;
+    transition: border-color 0.15s ease 0s;
+}
+
+.loginbutton{
+    width: 50%;
+    margin: 1.3rem auto 2.2rem;
+    border-radius: 30px;
+    border: 0px;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #479ead;
+    color: rgb(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    display: block;
+}
+
+:hover.loginbutton {
+    color: white;
+    background: #ff7300;
+    box-shadow: white;
+}
+
+.logout {
+    border-radius: 5px;
+    border: 0px;
+    padding: 0.1rem 0.5rem;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 1vh;
+}
+
+:hover.logout {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.1rem 0.5rem;
+}
+
+.logout a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.ksl{
+    background-color: transparent;
+    margin: 0 0 0 9.5em;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+:hover.ksl{
+    color: #32717c;
+}
+
+#id {
+    align-self: center;
+    background-color: #fff;
+    border: solid #000 1px;
+}
