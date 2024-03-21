@@ -15,6 +15,9 @@ from .form import CreateTicketForm, EditarTicketForm, FecharTicketForm
 #    return redirect('/agenda/')
 
 
+def home(request):
+    return render(request, 'home.html')
+
 def login_user(request):
     return render(request, 'login.html')
 
@@ -40,7 +43,7 @@ def lista_eventos(request):
     usuario = request.user
     data_atual = datetime.now() - timedelta(hours=1)
     evento = Evento.objects.filter(usuario=usuario)
-    dados = {'eventos':evento}
+    dados = {'eventos': evento}
     return render(request, 'agenda/agenda.html', dados)
 
 @login_required(login_url='/login/')

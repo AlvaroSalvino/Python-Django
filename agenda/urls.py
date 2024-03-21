@@ -23,12 +23,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', views.home),
     path('agenda/', views.lista_eventos),
     path('agenda/lista/', views.json_lista_evento),
     path('agenda/evento/', views.evento),
     path('agenda/evento/submit', views.submit_evento),
     path('agenda/evento/delete/<int:id_evento>/', views.delete_evento),
-    path('', RedirectView.as_view(url='/agenda/')),
+    path('', RedirectView.as_view(url='/home/')),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
