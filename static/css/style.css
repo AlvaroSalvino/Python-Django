@@ -37,7 +37,104 @@ body {
 .nav-item a:hover {
     color: #ddd;
 }
-    
+
+.princ {
+    padding: 70px 0;
+    position: relative;
+    background: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.card {
+    border: 0;
+    border-radius: 0.1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.card .card-text-center {
+    margin: 0 20px;
+    padding: 30px 0;
+    border-bottom: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.card .card-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: center!important;
+}
+
+.card-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: auto;
+    padding: 1.25rem;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    position: relative;
+    align-items: stretch;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.input-group-prepend {
+    margin-right: 0;
+}
+
+.input-group-text {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #FFFFFF;
+    padding: 11px 0 11px 19px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: 30px;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.loginform {
+    display: block;
+    margin-top: 0em;
+}
+
+h3 {
+    font-size: 1.825em;
+    line-height: 1.4em;
+}
 
 h2{
     color: #fff;
@@ -344,4 +441,28 @@ form {
     align-self: center;
     background-color: #fff;
     border: solid #000 1px;
+}
+
+@media (min-width: 1200px){
+    .container {
+    max-width: 1140px;
+}
+}
+
+@media (min-width: 576px){
+.container {
+    max-width: 540px;
+}
+}
+
+@media (min-width: 768px){
+.container {
+    max-width: 720px;
+}
+}
+
+@media (min-width: 992px){
+.container {
+    max-width: 960px;
+}
 }
