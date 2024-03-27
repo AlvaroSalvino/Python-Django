@@ -18,14 +18,16 @@ main td {
     padding: 2px;
     color: #000;
     word-spacing: 5px;
-}  
-
-tbody a {
-    color: #000;
 }
 
-tbody a:hover {
-    color: #1625ff;
+td a {
+    font-weight: 700;
+    color: #7c0101;
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #ff0000;
 }
 
 table {

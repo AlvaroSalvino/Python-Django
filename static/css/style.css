@@ -7,6 +7,13 @@ span{
     color: red;
 }
 
+.page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #fechar-ticket-form {
     transition: opacity 2s ease-in-out;
 }
@@ -348,3 +355,45 @@ form {
     background-color: #fff;
     border: solid #000 1px;
 }
+
+#mensagem {
+    background-color: #F6F6F6;
+    color: #287a02;
+    font-weight: 700;
+}
+
+#mensagem.error {
+    background-color: #F6F6F6;
+    font-weight: 700;
+    color: #7c0101;
+}
+
+.area-resolutiva {
+    background-color: #F6F6F6;
+    width: 20%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.336);
+}
+
+.area-resolutiva:hover {
+    background-color: #8f8e8e;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.11);
+}
+
+.area-resolutiva a{
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.area-resolutiva a:hover{
+    color: blue;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
