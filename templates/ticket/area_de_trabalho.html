@@ -1,9 +1,9 @@
 {% extends "models/model-page.html" %}
 {% block content %}
 
-<div class="mensagem">
+<div class="page">
     {% for message in messages %}
-    <div>
+    <div id="mensagem">
         {{ message }}
     </div>
     {% endfor %}
@@ -11,7 +11,7 @@
         <h1>Área de Trabalho</h1>
 
         <table style="border: solid 2px #fff;">
-           <thead>
+            <thead>
                 <tr>
                     <th scope="col">ID do chamado</th>
                     <th scope="col">Título</th>
@@ -27,20 +27,20 @@
             <tbody>
                 {% for ticket in tickets %}
                 <tr>
-                    <td><small>{{ticket.numero_do_ticket}}</small></td>
-                    <td><small>{{ticket.titulo_ticket}}</small></td>
-                    <td><small>{{ticket.descricao_ticket}}</small></td>
+                    <td><small>{{ticket.id}}</small></td>
+                    <td><small>{{ticket.titulo_ticket|default:'Não informado'}}</small></td>
+                    <td><small>{{ticket.descricao_ticket|default:'Não informado'}}</small></td>
                     <td><small>{{ticket.data_criada}}</small></td>
                     <td>{{ticket.criado_por}}</td>
                     {% if ticket.ticket_status == 'Ativo' %}
-                        <td><span class="status ativo">Ativo</span></td>
+                    <td><span class="status ativo">Ativo</span></td>
                     {% elif ticket.ticket_status == 'Pendente' %}
-                        <td><span class="status pendente">Pendente</span></td>
+                    <td><span class="status pendente">Pendente</span></td>
                     {% elif ticket.ticket_status == 'Completo' %}
-                        <td><span class="status completo">Completo</span></td>
+                    <td><span class="status completo">Completo</span></td>
                     {% endif %}
-                    <td>{{ticket.atribuido_para.username|default:'N/A'}}</td>
-                    <td><small>{{ ticket.prazo }}</small></td>
+                    <td>{{ticket.atribuido_para.username|default:'Não atribuído'}}</td>
+                    <td><small>{{ticket.prazo|default:'Não informado'}}</small></td>
                     <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver Detalhes</a></small></td>
                 </tr>
                 {% endfor %}

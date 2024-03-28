@@ -2,51 +2,57 @@
 
 {% block content %}
 
-<div>
+<div class="page">
+    {% for message in messages %}
+    <div id="mensagem">
+        {{ message }}
+    </div>
+    {% endfor %}
     <div>
-        <h1>Chamados 'Pendentes'</h1>
+        <div>
+            <h1>Chamados 'Pendentes'</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">ID do chamado</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Criado em</th>
-                    <th scope="col">Criado por</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Prazo</th>
-                    <th scope="col">Acao</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for ticket in tickets %}
-                <tr>
-                    <td><small>{{ticket.numero_do_ticket}}</small></td>
-                    <td><small>{{ticket.titulo_ticket}}</small></td>
-                    <td><small>{{ticket.descricao_ticket}}</small></td>
-                    <td><small>{{ticket.data_criada}}</small></td>
-                    <td>{{ticket.criado_por}}</td>
-                    {% if ticket.ticket_status == 'Ativo' %}
-                    <td><span class="status ativo">Ativo</span></td>
-                    {% elif ticket.ticket_status == 'Pendente' %}
-                    <td><span class="status pendente">Pendente</span></td>
-                    {% elif ticket.ticket_status == 'Completo' %}
-                    <td><span class="status completo">Completo</span></td>
-                    {% endif %}
-                    <td><small>{{ ticket.prazo }}</small></td>
-                    <td><small><a href="{% url 'aceitar_ticket' ticket.pk %}">Aceitar</a></small></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% for message in messages %}
-        <div id="mensagem">
-            <strong>Erro </strong>{{ message }}
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID do chamado</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Criado em</th>
+                        <th scope="col">Criado por</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Prazo</th>
+                        <th scope="col">Acao</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td><small>{{ticket.id}}</small></td>
+                        <td><small>{{ticket.titulo_ticket|default:'Não informado'}}</small></td>
+                        <td><small>{{ticket.descricao_ticket|default:'Não informado'}}</small></td>
+                        <td><small>{{ticket.data_criada}}</small></td>
+                        <td>{{ticket.criado_por}}</td>
+                        {% if ticket.ticket_status == 'Ativo' %}
+                        <td><span class="status ativo">Ativo</span></td>
+                        {% elif ticket.ticket_status == 'Pendente' %}
+                        <td><span class="status pendente">Pendente</span></td>
+                        {% elif ticket.ticket_status == 'Completo' %}
+                        <td><span class="status completo">Completo</span></td>
+                        {% endif %}
+                        <td><small>{{ticket.prazo|default:'Não informado'}}</small></td>
+                        <td><small><a href="{% url 'aceitar_ticket' ticket.pk %}">Aceitar</a></small></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% for message in messages %}
+            <div id="mensagem">
+                <strong>Erro </strong>{{ message }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
-<div></div>
 
 {% endblock %}
