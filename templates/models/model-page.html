@@ -11,6 +11,17 @@
     </script>
 </head>
 <header id="main-header">
+    <div class="btn-voltar">
+        <a href="javascript:history.back()">
+            <li>
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"
+                        fill="white"></path>
+                </svg>
+        </a></li>
+    </div>
     <div class="logo-header">
         <div class="div-in-logo-header">
             <a href="https://maltagesto-iyotfj7i.b4a.run/">
@@ -22,28 +33,42 @@
         <nav id="main-nav">
             <ul class="nav-list">
                 {% if request.user.is_authenticated %}
-                    <a href="/area_de_trabalho">
-                        <li>Área de Trabalho</a></li>
-                    <a href="/lista_de_tickets">
-                        <li>Chamados</a></li>
-                    <a href="/meus_chamados">
-                        <li>Meus Chamados em aberto</a></li>
-                    <a href="/todos_os_tickets_fechados">
-                        <li>Chamados Fechados</a></li>
-                    <a href="/criar_ticket">
-                        <li>Abrir Chamado</a></li>
-                    <a href="/agenda">
-                        <li>Agenda</a></li>
-                    <a href="javascript:history.back()">
-                        <li>Voltar</a></li>
-                    <a href="/logout">
-                        <li></li><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="2.3rem" height="2.3rem" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" fill="white"></path> <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" fill="white"></path> </svg>
-                        </a></li>
+                <a href="/area_de_trabalho">
+                    <li>Área de Trabalho
+                </a></li>
+                <a href="/lista_de_tickets">
+                    <li>Chamados
+                </a></li>
+                <a href="/meus_chamados">
+                    <li>Meus Chamados em aberto
+                </a></li>
+                <a href="/todos_os_tickets_fechados">
+                    <li>Chamados Fechados
+                </a></li>
+                <a href="/criar_ticket">
+                    <li>Abrir Chamado
+                </a></li>
+                <a href="/agenda">
+                    <li>Agenda
+                </a></li>
+                <a href="/logout">
+                    <li><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="2.3rem" height="2.3rem"
+                            fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd"
+                                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                                fill="white"></path>
+                        </svg>
+                </a></li>
                 {% else %}
-                    <a href="/home">
-                        <li>Home</a></li>
-                    <a href="/login">
-                        <li>Log in</a></li>
+                <a href="/home">
+                    <li>Home
+                </a></li>
+                <a href="/login">
+                    <li>Log in
+                </a></li>
                 {% endif %}
             </ul>
         </nav>
