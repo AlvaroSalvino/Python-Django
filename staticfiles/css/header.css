@@ -93,6 +93,10 @@ ul {
     gap: 0.2vw;
 }
 
+.btn-voltar li {
+    list-style: none;
+}
+
 .nav-list li {
     justify-content: space-around;
     cursor: pointer;
@@ -124,14 +128,14 @@ li a {
     text-transform: uppercase;
     margin-inline-end: var(--e-nav-menu-horizontal-menu-item-margin);
     align-items: center;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 li a:hover {
     padding-right: -0.5em;
     justify-content: center;
     display: flex;
-    font-weight: 700;
+    font-weight: 500;
     color: #ba0f14;
     font-size: 1em;
     text-transform: uppercase;

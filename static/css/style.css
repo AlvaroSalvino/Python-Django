@@ -19,10 +19,6 @@ span{
     transition: opacity 2s ease-in-out;
 }
 
-body {
-    background-color: #F6F6F6;
-}
-
 h2{
     color: #333;
 }

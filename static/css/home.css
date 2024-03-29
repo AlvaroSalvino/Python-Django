@@ -6,7 +6,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #333;
+    background-color: #F6F6F6;
     margin-left: 0;
     margin-right: 0;
 }
@@ -52,10 +52,7 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
-    color: #f1f1f1;
-    font-size: 3rem;
-}
+
 
 h4 {
     color: #f1f1f1;
