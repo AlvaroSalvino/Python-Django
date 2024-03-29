@@ -93,8 +93,27 @@ ul {
     gap: 0.2vw;
 }
 
+.bi-arrow-left-circle {
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.bi-arrow-left-circle:hover {
+    color: #000;
+}
+
+.btn-voltar {
+    display: flex;
+    align-items: center;
+}
+
 .btn-voltar li {
     list-style: none;
+}
+
+.btn-voltar li:hover {
+    background-color: #FFF;
 }
 
 .nav-list li {
