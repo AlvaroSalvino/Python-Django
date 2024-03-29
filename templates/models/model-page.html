@@ -11,10 +11,14 @@
     </script>
 </head>
 <header id="main-header">
-    <div class="btn-voltar">
-        <a href="javascript:history.back()">
+    <div class="div-voltar">
+        <a href="javascript:history.back()" class="btn-voltar">
             <li>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-arrow-left-circle" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" fill="white"></path> </svg>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z">
+                    </path>
+                </svg>
         </a></li>
     </div>
     <div class="logo-header">
@@ -28,35 +32,35 @@
         <nav id="main-nav">
             <ul class="nav-list">
                 {% if request.user.is_authenticated %}
-                    <a href="/area_de_trabalho">
-                        <li>Área de Trabalho
-                    </a></li>
-                    <a href="/lista_de_tickets">
-                        <li>Chamados
-                    </a></li>
-                    <a href="/meus_chamados">
-                        <li>Chamados em aberto
-                    </a></li>
-                    <a href="/todos_os_tickets_fechados">
-                        <li>Chamados Fechados
-                    </a></li>
-                    <a href="/criar_ticket">
-                        <li>Abrir Chamado
-                    </a></li>
-                    <a href="/agenda">
-                        <li>Agenda
-                    </a></li>
-                    <a href="/logout">
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="2.3rem" height="2.3rem"
-                                fill="currentColor" class="bi-box-arrow-in-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
-                                    fill="white"></path>
-                                <path fill-rule="evenodd"
-                                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-                                    fill="white"></path>
-                            </svg>
-                    </a></li>
+                <a href="/area_de_trabalho">
+                    <li>Área de Trabalho
+                </a></li>
+                <a href="/lista_de_tickets">
+                    <li>Chamados
+                </a></li>
+                <a href="/meus_chamados">
+                    <li>Chamados em aberto
+                </a></li>
+                <a href="/todos_os_tickets_fechados">
+                    <li>Chamados Fechados
+                </a></li>
+                <a href="/criar_ticket">
+                    <li>Abrir Chamado
+                </a></li>
+                <a href="/agenda">
+                    <li>Agenda
+                </a></li>
+                <a href="/logout" class="icon-logout">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="2.3rem" height="2.3rem"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z">
+                        </path>
+                        <path fill-rule="evenodd"
+                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z">
+                        </path>
+                    </svg>
+                </a>
                 {% else %}
 
                 {% endif %}

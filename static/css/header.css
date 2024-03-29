@@ -13,7 +13,7 @@ ul {
     --display: flex;
     --min-height: 0px;
     --flex-direction: row;
-    --container-widget-width: calc( ( 1 - var(--container-widget-flex-grow) ) * 100% );
+    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
     --container-widget-height: 100%;
     --container-widget-flex-grow: 1;
     --container-widget-align-self: stretch;
@@ -50,27 +50,27 @@ ul {
 }
 
 .logo-header {
-    --width: 21.323%;
-    --display: flex;
-    --flex-direction: column;
-    --container-widget-width: calc( ( 1 - var(--container-widget-flex-grow) ) * 100% );
+    width: 21.323%;
+    display: flex;
+    flex-direction: column;
+    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
     --container-widget-height: initial;
     --container-widget-flex-grow: 0;
     --container-widget-align-self: initial;
-    --justify-content: center;
-    --align-items: center;
-    --gap: 0px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 0px;
     --background-transition: 0.3s;
-    --margin-block-start: 0px;
-    --margin-block-end: 0px;
-    --margin-inline-start: 0px;
-    --margin-inline-end: 0px;
-    --padding-block-start: 0em;
-    --padding-block-end: 0em;
-    --padding-inline-start: 0em;
-    --padding-inline-end: 0em;
-    --flex-grow: 0;
-    --flex-shrink: 0;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-block-start: 0em;
+    padding-block-end: 0em;
+    padding-inline-start: 0em;
+    padding-inline-end: 0em;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .div-in-logo-header {
@@ -81,27 +81,76 @@ ul {
 #main-nav .nav-list {
     display: flex;
     flex-wrap: nowrap;
-    --e-nav-menu-horizontal-menu-item-margin: calc( 25px / 2 );
+    --e-nav-menu-horizontal-menu-item-margin: calc(25px / 2);
     list-style: none;
     margin: 0;
     padding: 1rem 0;
     line-height: normal;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     --align-items: initial;
     margin-inline-end: auto;
     justify-content: flex-start;
     gap: 0.2vw;
 }
 
-.bi-arrow-left-circle {
+.icon-logout svg {
     color: white;
-    width: 1.5rem;
-    height: 1.5rem;
+    fill: currentColor;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.btn-voltar {
+.icon-logout:hover {
+    background-color: #fff;
+    border: none;
+    border-radius: 7px;
+}
+
+.icon-logout:hover svg {
+    color: #ba0f14;
+    fill: currentColor;
+}
+
+.icon-logout path {
+    color: white;
+}
+
+.icon-logout:hover path {
+    color: #ba0f14;
+    fill: currentColor;
+}
+
+.div-voltar {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-voltar svg {
+    color: white;
+    fill: currentColor;
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-voltar:hover {
+    background-color: #fff;
+    border: none;
+    border-radius: 7px;
+}
+
+.btn-voltar:hover svg {
+    color: #ba0f14;
+    fill: currentColor;
+}
+
+.btn-voltar path {
+    color: white;
+}
+
+.btn-voltar:hover path {
+    color: #ba0f14;
+    fill: currentColor;
 }
 
 li {
@@ -109,11 +158,11 @@ li {
     cursor: pointer;
     position: relative;
     display: flex;
-    --e-nav-menu-horizontal-menu-item-margin: calc( 25px / 2 );
+    --e-nav-menu-horizontal-menu-item-margin: calc(25px / 2);
     margin: 0;
     padding: 0;
     line-height: normal;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 li:hover {
@@ -147,7 +196,7 @@ li a:hover {
     font-size: 1em;
     text-transform: uppercase;
 }
-    
+
 main th {
     border: solid 1px #d1cece;
     padding: 2px;
