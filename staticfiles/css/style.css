@@ -356,36 +356,37 @@ form {
 }
 
 #mensagem.error {
-    background-color: #F6F6F6;
+    background-color: #333;
     font-weight: 700;
     color: #7c0101;
 }
 
 .area-resolutiva {
-    background-color: #F6F6F6;
-    width: 20%;
+    background-color: #ba0f14;
+    width: 15vw;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.336);
 }
 
 .area-resolutiva:hover {
-    background-color: #8f8e8e;
+    background-color: #de0b0b;
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.11);
+    scale: 1.1;
 }
 
 .area-resolutiva a{
-    color: #333;
-    font-weight: 700;
+    color: #ffffff;
+    font-weight: 500;
     text-decoration: none;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
 }
 
 .area-resolutiva a:hover{
-    color: blue;
-    font-weight: 700;
+    color: #ffffff;
+    font-weight: 600;
     text-decoration: none;
 }
 

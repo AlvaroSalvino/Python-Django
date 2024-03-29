@@ -42,7 +42,7 @@ class Ticket(models.Model):
     data_criada = models.DateTimeField(auto_now_add=True)
     atribuido_para = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
     foi_resolvido = models.BooleanField(default=False)
-    prazo = models.DateTimeField(null=True, blank=True)
+    prazo = models.DateTimeField(null=True, blank=True, verbose_name='Prazo')
     data_aceita = models.DateTimeField(null=True, blank=True)
     data_fechada = models.DateTimeField(null=True, blank=True)
     ticket_status = models.CharField(max_length=15, choices=status_choices)

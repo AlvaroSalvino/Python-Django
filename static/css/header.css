@@ -187,7 +187,7 @@ li a {
     font-weight: 500;
 }
 
-li a:hover {
+li:hover a{
     padding-right: -0.5em;
     justify-content: center;
     display: flex;
