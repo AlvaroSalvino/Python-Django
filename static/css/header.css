@@ -99,10 +99,6 @@ ul {
     height: 1.5rem;
 }
 
-svg:hover {
-    color: #000;
-}
-
 .btn-voltar {
     display: flex;
     align-items: center;
