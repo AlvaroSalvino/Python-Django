@@ -10,28 +10,46 @@
         }
     </script>
 </head>
-    <header id="main-header">
+<header id="main-header">
+    <div class="logo-header">
+        <div class="div-in-logo-header">
+            <a href="https://maltagesto-iyotfj7i.b4a.run/">
+                <img width="200" height="52" src="/static/image/logo-branca.png">
+            </a>
+        </div>
+    </div>
+    <div class="itens-menu">
         <nav id="main-nav">
             <ul class="nav-list">
                 {% if request.user.is_authenticated %}
-                    <li><a href="/agenda">Agenda</a></li>
-                    <li><a href="/area_de_trabalho">Área de Trabalho</a></li>
-                    <li><a href="/lista_de_tickets">Chamados</a></li>
-                    <li><a href="/meus_chamados">Meus Chamados em aberto</a></li>
-                    <li><a href="/todos_os_tickets_fechados">Chamados Fechados</a></li>
-                    <li><a href="/criar_ticket">Abrir Chamado</a></li>
-                    <li><a href="/logout">LOGOUT</a></li>
-                    <li><a href="javascript:history.back()">Voltar</a></li>
+                <li>
+                    <a href="/agenda">Agenda</a>
+                    <span>
+                        <svg style="margin-top: 0.3em; width: 0.8rem; color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path
+                                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                                fill="white"></path>
+                        </svg>
+                    </span>
+                </li>
+                <li><a href="/area_de_trabalho">Área de Trabalho</a></li>
+                <li><a href="/lista_de_tickets">Chamados</a></li>
+                <li><a href="/meus_chamados">Meus Chamados em aberto</a></li>
+                <li><a href="/todos_os_tickets_fechados">Chamados Fechados</a></li>
+                <li><a href="/criar_ticket">Abrir Chamado</a></li>
+                <li><a href="/logout">LOGOUT</a></li>
+                <li><a href="javascript:history.back()">Voltar</a></li>
                 {% else %}
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/login">Log in</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/login">Log in</a></li>
                 {% endif %}
             </ul>
         </nav>
-    </header>
-    <main>
-        {% block content %} {% endblock %}
-    </main>
+    </div>
+</header>
+<main>
+    {% block content %} {% endblock %}
+</main>
 </body>
 
 </html>

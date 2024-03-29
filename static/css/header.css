@@ -1,12 +1,138 @@
-header {
+@charset "UTF-8";
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    padding-inline-start: 40px;
+}
+
+#main-header {
+    color: #fff;
+    padding: 10px 0;
+    --display: flex;
+    --min-height: 0px;
+    --flex-direction: row;
+    --container-widget-width: calc( ( 1 - var(--container-widget-flex-grow) ) * 100% );
+    --container-widget-height: 100%;
+    --container-widget-flex-grow: 1;
+    --container-widget-align-self: stretch;
+    --align-items: center;
+    --gap: 10px 10px;
+    --background-transition: 0.3s;
+    border-style: solid;
+    --border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    --border-block-start-width: 01px;
+    --border-inline-end-width: 0px;
+    --border-block-end-width: 1px;
+    --border-inline-start-width: 0px;
+    border-color: var(--e-global-color-primary);
+    --border-color: var(--e-global-color-primary);
+    box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.1);
+    --margin-block-start: 0px;
+    --margin-block-end: 0px;
+    --margin-inline-start: 0px;
+    --margin-inline-end: 0px;
+    --padding-block-start: 0px;
+    --padding-block-end: 0px;
+    --padding-inline-start: 0px;
+    --padding-inline-end: 0px;
+    --z-index: 99;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #000;
+    background-color: #ba0f14;
     width: 100%;
-    height: 9vh;
+    --align-self: center;
+    --flex-grow: 0;
+    --flex-shrink: 1;
 }
 
+.logo-header {
+    --width: 21.323%;
+    --display: flex;
+    --flex-direction: column;
+    --container-widget-width: calc( ( 1 - var(--container-widget-flex-grow) ) * 100% );
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --justify-content: center;
+    --align-items: center;
+    --gap: 0px 0px;
+    --background-transition: 0.3s;
+    --margin-block-start: 0px;
+    --margin-block-end: 0px;
+    --margin-inline-start: 0px;
+    --margin-inline-end: 0px;
+    --padding-block-start: 0em;
+    --padding-block-end: 0em;
+    --padding-inline-start: 0em;
+    --padding-inline-end: 0em;
+    --flex-grow: 0;
+    --flex-shrink: 0;
+}
+
+.div-in-logo-header {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+}
+
+#main-nav .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    --e-nav-menu-horizontal-menu-item-margin: calc( 25px / 2 );
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    line-height: normal;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    --align-items: initial;
+    margin-inline-end: auto;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.nav-list li {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    --e-nav-menu-horizontal-menu-item-margin: calc( 25px / 2 );
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.nav-list li:hover {
+    background-color: #fff;
+    border: none;
+    border-radius: 7px;
+}
+
+li a {
+    padding: 5px;
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    border-width: 0 1px 0;
+    fill: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-inline-end: var(--e-nav-menu-horizontal-menu-item-margin);
+    align-items: center;
+}
+
+li a:hover {
+    color: #ba0f14;
+    font-family: "Poppins", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+    
 main th {
     border: solid 1px #d1cece;
     padding: 2px;
@@ -34,23 +160,19 @@ table {
     background-color: #fff;
 }
 
-nav {
+#main-nav {
     display: flex;
     flex-direction: row;
     border-bottom: solid 1px #000;
     margin: 0 2vw;
 }
 
-nav a {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 2vw;
-    color: #fff;
-    text-decoration: none;
-    border: solid #000;
-    border-width: 0 1px 0;
+#main-nav:hover {
+    transition-duration: 0s;
 }
 
-nav button {
+
+#main-nav button {
     font-size: 1.7vh;
     padding: 0 5vh;
     font-weight: 900;
@@ -62,8 +184,12 @@ nav button {
     border: none;
 }
 
-nav button:hover {
+#main-nav button:hover {
     border: solid #fff;
     border-width: 0 1px;
     background-color: #000;
+}
+
+.itens-menu {
+    display: flex;
 }
