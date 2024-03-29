@@ -27,6 +27,25 @@ main {
     min-height: 850px;
 }
 
+.avatar {
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+}
+
+.avatar img{
+    width: 27vw;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-h1 {
+    justify-content: center;
+}
+
 h1 {
     font-size: 1.5rem;
     margin-left: 4%;
@@ -67,7 +86,7 @@ h1 {
     min-height: 26rem;
     min-width: 26rem;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 0 30px 30px 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

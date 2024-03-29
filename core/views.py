@@ -37,7 +37,6 @@ def submit_login(request):
             messages.error(request, "Usuário ou Senha inválido.")
     return redirect('/')
 
-
 @login_required(login_url='/login/')
 def lista_eventos(request):
     usuario = request.user

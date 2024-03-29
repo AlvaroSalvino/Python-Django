@@ -99,7 +99,7 @@ ul {
     height: 1.5rem;
 }
 
-.bi-arrow-left-circle:hover {
+svg:hover {
     color: #000;
 }
 
@@ -108,15 +108,7 @@ ul {
     align-items: center;
 }
 
-.btn-voltar li {
-    list-style: none;
-}
-
-.btn-voltar li:hover {
-    background-color: #FFF;
-}
-
-.nav-list li {
+li {
     justify-content: space-around;
     cursor: pointer;
     position: relative;
@@ -128,7 +120,7 @@ ul {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.nav-list li:hover {
+li:hover {
     justify-content: center;
     background-color: #fff;
     border: none;
