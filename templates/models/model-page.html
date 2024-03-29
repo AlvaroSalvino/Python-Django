@@ -22,8 +22,6 @@
         <nav id="main-nav">
             <ul class="nav-list">
                 {% if request.user.is_authenticated %}
-                    <a href="/agenda">
-                        <li>Agenda</a></li>
                     <a href="/area_de_trabalho">
                         <li>Área de Trabalho</a></li>
                     <a href="/lista_de_tickets">
@@ -34,6 +32,8 @@
                         <li>Chamados Fechados</a></li>
                     <a href="/criar_ticket">
                         <li>Abrir Chamado</a></li>
+                    <a href="/agenda">
+                        <li>Agenda</a></li>
                     <a href="/logout">
                         <li>LOGOUT</a></li>
                     <a href="javascript:history.back()">

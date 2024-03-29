@@ -32,7 +32,7 @@ def submit_login(request):
         usuario = authenticate(username=username, password=password)
         if usuario is not None:
             login(request, usuario)
-            return redirect('/agenda/')
+            return redirect('/area_de_trabalho/')
         else:
             messages.error(request, "Usuário ou Senha inválido.")
     return redirect('/')
