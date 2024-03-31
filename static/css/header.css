@@ -50,32 +50,19 @@ ul {
 }
 
 .logo-header {
-    width: 21.323%;
     display: flex;
-    flex-direction: column;
-    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
-    --container-widget-height: initial;
-    --container-widget-flex-grow: 0;
-    --container-widget-align-self: initial;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 0px 0px;
-    --background-transition: 0.3s;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-block-start: 0em;
-    padding-block-end: 0em;
-    padding-inline-start: 0em;
-    padding-inline-end: 0em;
+    justify-content: center;
+    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
+    background-transition: 0.3s;
     flex-grow: 0;
     flex-shrink: 0;
 }
 
 .div-in-logo-header {
     margin: 0;
-    padding: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 #main-nav .nav-list {
@@ -200,7 +187,11 @@ li:hover a{
 main th {
     border: solid 1px #d1cece;
     padding: 2px;
-    color: #000;
+    color: #FFF;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    padding: 0 1rem;
+    background-color: #ba0f14;
 }
 
 main td {

@@ -31,9 +31,9 @@ span{
     font-weight: bold;
 }
 
+
 .page {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -71,6 +71,8 @@ main {
 }
 
 h1 {
+    text-align: left;
+    text-transform: uppercase;
     font-size: 1.5rem;
     margin-left: 4%;
     color: #333;
@@ -247,6 +249,14 @@ form{
 :hover.author {
     color: aqua;
     font-weight: 800;
+}
+
+li {
+    text-transform: uppercase;
+}
+
+.espace {
+    min-height: 5vh;
 }
 
 .svgemail {
