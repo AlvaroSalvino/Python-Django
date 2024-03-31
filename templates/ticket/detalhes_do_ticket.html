@@ -28,9 +28,9 @@
             <div>
                 <div>
                     {% if ticket.foi_resolvido %}
-                    <b>Já foi resolvido?</b> <span class="status completo">Foi Resolvido</span>
+                        <b>Já foi resolvido?</b> <span class="status completo">Foi Resolvido</span>
                     {% else %}
-                    <b>Já foi resolvido?</b> <span class="status ativo">Ainda não</span>
+                        <b>Já foi resolvido?</b> <span class="status ativo">Ainda não</span>
                     {% endif %}
                 </div>
                 <div>
@@ -54,8 +54,8 @@
             </div>
             <br>
             {% if ticket.atribuido_para_grupo in request.user.groups.all and not ticket.foi_resolvido %}
-            <div class="area-resolutiva"><a href="#" id="resolvido-btn">Resolvido</a></div>
-            <div id="fechar-ticket-form" style="display: none;">
+                <div class="area-resolutiva"><a href="#" id="resolvido-btn">Resolvido</a></div>
+                <div id="fechar-ticket-form" style="display: none;">
                 <form method="POST" action="{% url 'fechar_ticket' ticket.pk %}">
                     {% csrf_token %}
                     <label for="resposta">Resposta:</label>
@@ -66,14 +66,14 @@
             {% endif %}
 
             {% if request.user == ticket.criado_por and not ticket.foi_resolvido %}
-            <div class="area-resolutiva"><a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a></div>
+                <div class="area-resolutiva"><a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a></div>
             {% endif %}
 
 
             <div>
                 <h1>Todos os chamados criados por {{ticket.criado_por}}</h1>
                 {% for ticket in tickets_por_usuer %}
-                <p>{{ticket.id}} - {{ticket.titulo_ticket|default:'Não informado'}} - {{ticket.prazo|default:'Não informado'}}<div class="area-resolutiva"><a href="{% url 'detalhes_do_ticket' ticket.pk %}">(Ver chamado)</a></div></p>
+                    <p>{{ticket.id}} - {{ticket.titulo_ticket|default:'Não informado'}} - {{ticket.prazo|default:'Não informado'}}<div class="area-resolutiva"><a href="{% url 'detalhes_do_ticket' ticket.pk %}">(Ver chamado)</a></div></p>
                 {% endfor %}
 
             </div>
