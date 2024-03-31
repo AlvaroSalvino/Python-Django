@@ -5,11 +5,11 @@
     <div class="espace"></div>
     <div class="form-login">
         <div class="avatar">
-            <img src="/static/image/ela.png" alt="Malta Colabora">
+            <img src="{% static 'image/ela.png' %}" alt="Malta Colabora">
         </div>
         <form action="submit" method="POST">{% csrf_token %}
             <div id="formulario">
-                <img src="/static/image/malta logo collabora.png">
+                <img src="{% static 'image/malta logo collabora.png' %}">
                 <div class="">
                     <div class="formname">
                         <svg class="svgemail" stroke="currentColor" fill="currentColor" stroke-width="0"
