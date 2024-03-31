@@ -11,7 +11,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID do chamado</th>
+                <th id="id-item">ID</th>
                 <th>Título</th>
                 <th>Status</th>
                 <th>Prazo</th>
@@ -21,10 +21,10 @@
         <tbody>
             {% for ticket in tickets %}
             <tr>
-                <td>{{ ticket.id }}</td>
+                <td id="id-scope">{{ ticket.id }}</td>
                 <td>{{ ticket.titulo_ticket }}</td>
                 <td>{{ ticket.ticket_status }}</td>
-                <td>{{ ticket.prazo }}</td>
+                <td>{{ ticket.prazo|date:"d/m/Y"|default:'Não informado' }}</td>
                 <td><span><a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a></span></td>
             </tr>
             {% endfor %}

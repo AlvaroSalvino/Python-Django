@@ -46,10 +46,10 @@
                     <b>Criado por:</b> {{ticket.criado_por}}
                 </div>
                 <div>
-                    <b>Prazo:</b> {{ticket.prazo|default:'Não informado'}}
+                    <b>Prazo:</b> {{ticket.prazo|date:"d/m/Y"|default:'Não informado'}}
                 </div>
                 <div>
-                    <b>Status do chamado:</b> <small>{{ticket.ticket_status}}</small>
+                    <b>Status do chamado:</b> {{ticket.ticket_status}}
                 </div>
             </div>
             <br>

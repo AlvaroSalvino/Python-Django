@@ -208,6 +208,7 @@ main td {
     padding: 2px;
     color: #000;
     word-spacing: 5px;
+    text-transform: uppercase;
 }
 
 td a {
