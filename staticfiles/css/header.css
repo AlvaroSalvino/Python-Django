@@ -55,7 +55,6 @@ ul {
     align-items: center;
     justify-content: center;
     --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
-    background-transition: 0.3s;
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -141,6 +140,7 @@ ul {
 }
 
 li {
+    text-transform: uppercase;
     justify-content: space-around;
     cursor: pointer;
     position: relative;
