@@ -37,11 +37,11 @@
                         <td class="data"><small>{{ticket.data_criada|date:"d/m/Y"}}</small></td>
                         <td>{{ticket.criado_por}}</td>
                         {% if ticket.ticket_status == 'Ativo' %}
-                            <td><span class="status ativo">Ativo</span></td>
+                        <td><span class="status ativo">Ativo</span></td>
                         {% elif ticket.ticket_status == 'Pendente' %}
-                            <td><span class="status pendente">Pendente</span></td>
+                        <td><span class="status pendente">Pendente</span></td>
                         {% elif ticket.ticket_status == 'Completo' %}
-                            <td><span class="status completo">Completo</span></td>
+                        <td><span class="status completo">Completo</span></td>
                         {% endif %}
                         <td><small>{{ticket.prazo|date:"d/m/Y"|default:'Não informado'}}</small></td>
                         <td><small>{{ticket.resposta_fechamento|default:'Não informado'}}</small></td>

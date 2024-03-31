@@ -33,16 +33,16 @@
                         <td><small>{{ticket.descricao_ticket|default:'Não informado'}}</small></td>
                         <td class="data"><small>{{ticket.data_criada|date:"d/m/Y"}}</small></td>
                         {% if ticket.atribuido_para_grupo %}
-                            <td><small>{{ticket.atribuido_para_grupo.name}}</small></td>
+                        <td><small>{{ticket.atribuido_para_grupo.name}}</small></td>
                         {% else %}
-                            <td><small>Não atribuído</small></td>
+                        <td><small>Não atribuído</small></td>
                         {% endif %}
                         {% if ticket.ticket_status == 'Ativo' %}
-                            <td><span class="status ativo">Ativo</span></td>
+                        <td><span class="status ativo">Ativo</span></td>
                         {% elif ticket.ticket_status == 'Pendente' %}
-                            <td><span class="status pendente">Pendente</span></td>
+                        <td><span class="status pendente">Pendente</span></td>
                         {% elif ticket.ticket_status == 'Completo' %}
-                            <td><span class="status completo">Completo</span></td>
+                        <td><span class="status completo">Completo</span></td>
                         {% endif %}
                         <td class="data"><small>{{ticket.prazo|date:"d/m/Y"|default:'Não informado'}}</small></td>
                         <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver detalhes</a></small></td>
