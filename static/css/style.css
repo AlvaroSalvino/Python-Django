@@ -237,11 +237,13 @@ form{
     background-color: white;
     display: grid;
 }
+
 .author{
     margin-left: 0.4rem;
     color: #fff;
     cursor: pointer;
 }
+
 :hover.author {
     color: aqua;
     font-weight: 800;
