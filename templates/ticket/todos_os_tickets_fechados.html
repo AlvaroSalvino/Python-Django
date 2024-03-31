@@ -44,7 +44,7 @@
                         {% endif %}
                         <td><small>{{ticket.prazo|date:"d/m/Y"|default:'Não informado'}}</small></td>
                         <td><small>{{ticket.resposta_fechamento|default:'Não informado'}}</small></td>
-                        <td><small>{{ticket.tempo_resposta_fechamento|date:"d/m/Y"}}</small></td>
+                        <td class="data"><small>{{ticket.tempo_resposta_fechamento|date:"d/m/Y"}}</small></td>
                         <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver Detalhes</a></small></td>
                     </tr>
                     {% endfor %}

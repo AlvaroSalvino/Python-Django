@@ -8,6 +8,10 @@ class CreateTicketForm(forms.ModelForm):
         atribuido_para_grupo = forms.ModelChoiceField(queryset=Group.objects.all(), required=True)
         model = Ticket
         fields = ['titulo_ticket', 'descricao_ticket', 'prazo', 'atribuido_para_grupo']
+        widgets = {
+            'prazo': forms.DateInput(format='%Y-%m-%d'),
+        }
+
 
 class EditarTicketForm(forms.ModelForm):
     class Meta:

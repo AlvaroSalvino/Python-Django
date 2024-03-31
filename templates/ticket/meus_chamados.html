@@ -24,7 +24,7 @@
                 <td id="id-scope">{{ ticket.id }}</td>
                 <td>{{ ticket.titulo_ticket }}</td>
                 <td>{{ ticket.ticket_status }}</td>
-                <td>{{ ticket.prazo|date:"d/m/Y"|default:'Não informado' }}</td>
+                <td class="data">{{ ticket.prazo|date:"d/m/Y"|default:'Não informado' }}</td>
                 <td><span><a href="{% url 'editar_ticket' ticket.pk %}">Editar Chamado</a></span></td>
             </tr>
             {% endfor %}
