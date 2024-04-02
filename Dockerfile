@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
 # Exponha a porta em que seu aplicativo será executado
-EXPOSE 8000
+EXPOSE 8064
 
 # Defina o comando para iniciar seu aplicativo
-CMD ["gunicorn", "agenda.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "agenda.wsgi:application", "--bind", "0.0.0.0:8064"]
