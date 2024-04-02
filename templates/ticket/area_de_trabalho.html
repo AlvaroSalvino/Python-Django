@@ -1,4 +1,5 @@
 {% extends "models/model-page.html" %}
+
 {% block content %}
 
 <div class="page">
@@ -7,13 +8,13 @@
         {{ message }}
     </div>
     {% endfor %}
+    <div>
+        <h1>Área de Trabalho</h1>
 
-    <div class="area">
-        <h1>ÁREA DE TRABALHO</h1>
         <table style="border: solid 2px #fff;">
             <thead>
                 <tr>
-                    <th id="id-item" scope="col">ID</th>
+                    <th scope="col">ID do chamado</th>
                     <th scope="col">Título</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Criado em</th>
@@ -27,10 +28,10 @@
             <tbody>
                 {% for ticket in tickets %}
                 <tr>
-                    <td id="id-scope"><small>{{ticket.id}}</small></td>
+                    <td><small>{{ticket.id}}</small></td>
                     <td><small>{{ticket.titulo_ticket|default:'Não informado'}}</small></td>
                     <td><small>{{ticket.descricao_ticket|default:'Não informado'}}</small></td>
-                    <td class="data"><small>{{ticket.data_criada|date:"d/m/Y"}}</small></td>
+                    <td><small>{{ticket.data_criada}}</small></td>
                     <td>{{ticket.criado_por}}</td>
                     {% if ticket.ticket_status == 'Ativo' %}
                     <td><span class="status ativo">Ativo</span></td>
@@ -40,7 +41,11 @@
                     <td><span class="status completo">Completo</span></td>
                     {% endif %}
                     <td>{{ticket.atribuido_para.username|default:'Não atribuído'}}</td>
-                    <td class="data"><small>{{ticket.prazo|date:"d/m/Y"|default:'Não informado'}}</small></td>
+                    <td style={% if ticket.get_ticket_atrasado %}
+                                "color:red"
+                                {% else %}
+                                "color:black"
+                                {% endif %}>{{ticket.prazo|default:'Não informado'}}</td>
                     <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver Detalhes</a></small></td>
                 </tr>
                 {% endfor %}
