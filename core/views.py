@@ -82,7 +82,7 @@ def submit_evento(request):
                               data_evento=data_evento,
                               descricao=descricao,
                               usuario=usuario)
-    return redirect('/')
+    return redirect('agenda')
 
 @login_required(login_url='/login/')
 def delete_evento(request, id_evento):
@@ -95,7 +95,7 @@ def delete_evento(request, id_evento):
         evento.delete()
     else:
         raise Http404()
-    return redirect('/')
+    return redirect('agenda')
 
 @login_required(login_url='/login/')
 def json_lista_evento(request):

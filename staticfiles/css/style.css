@@ -128,14 +128,6 @@ h1 {
     justify-content: center;
 }
 
-.novoevento {
-    border-radius: 30px;
-    font-weight: 700;
-    color: white;
-    position: relative;
-    margin: 1rem 0 0 2.5rem;
-}
-
 .saf {
     height: auto;
     background-color: white;
@@ -149,7 +141,7 @@ h1 {
 }
 
 .submit {
-    border-radius: 30px;
+    border-radius: 5px;
     border: 0px;
     padding: 0.3rem 0.7rem;
     margin-bottom: 5px;
@@ -168,7 +160,7 @@ h1 {
 }
 
 .sfgsagsaglk {
-    border-radius: 30px;
+    border-radius: 5px;
     border: 0px;
     padding: 0.3rem 0.7rem;
     background: #ff0000;
@@ -205,15 +197,25 @@ h1 {
 }
 
 .novoeventoa {
-    border-radius: 30px;
+    width: 15vw;
+    margin: 1.3rem auto 2.2rem;
+    border-radius: 5px;
     border: 0px;
-    padding: 0.3rem 0.7rem;
-    font-size: 15px;
-    font-weight: 700;
-    background: #125c69e3;
-    color: white;
-    position: relative;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ba0f14;
+    color: rgb(255, 255, 255);
     cursor: pointer;
+    transition: all 0.2s ease 0s;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.336);
+}
+
+:hover.novoeventoa {
+    background-color: darkgreen;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.11);
+    scale: 1.1;
 }
 
 .ask {
@@ -223,12 +225,6 @@ h1 {
     font-weight: bold;
 }
 
-:hover.novoeventoa{
-    color: white;
-    background: #ff7300;
-    box-shadow: white;
-}
-
 form{
     display: flex;
     justify-content: center;
@@ -236,9 +232,10 @@ form{
 
 .formevento {
     padding: 1rem;
-    border-radius: 30px;
+    border-radius: 5px;
     background-color: white;
     display: grid;
+    box-shadow: 16px 24px rgb(173 173 173 / 5%);
 }
 
 .author{
@@ -321,26 +318,27 @@ form {
 }
 
 .loginbutton{
-    width: 50%;
+    width: 15vw;
     margin: 1.3rem auto 2.2rem;
-    border-radius: 30px;
+    border-radius: 5px;
     border: 0px;
     padding: 0.6rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    background: #479ead;
+    background-color: #ba0f14;
     color: rgb(255, 255, 255);
     position: relative;
     cursor: pointer;
     transition: all 0.2s ease 0s;
     display: block;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.336);
 }
 
 :hover.loginbutton {
-    color: white;
-    background: #ff7300;
-    box-shadow: white;
+    background-color: #de0b0b;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.11);
+    scale: 1.1;
 }
 
 .logout {

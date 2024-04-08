@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home),
-    path('agenda/', views.lista_eventos),
+    path('agenda/', views.lista_eventos, name='agenda'),
     path('agenda/lista/', views.json_lista_evento),
     path('agenda/evento/', views.evento),
     path('agenda/evento/submit', views.submit_evento),

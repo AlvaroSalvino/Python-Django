@@ -4,24 +4,23 @@
 
 <h1>Evento</h1>
 <div class="createevento">
-    <form class="formevento" action="submit" method="POST">{% csrf_token %}
+    <form class="formevento" method="POST">
+        {% csrf_token %}
         <label class="ask">Título</label>
-        <input type="number" name="id_evento" value="{{ evento.id }}" hidden="hidden">
-        <br>
-        <input class="inputtitulo" type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+        {% render_field form.titulo class="inputtitulo" %}
         <br>
         <label class="ask">Data do Evento</label>
         <br>
-        <input class="saf" type="date" name="data_evento" value="{{ evento.get_data_input_evento }}">
+        {% render_field form.data_evento class="saf" %}
         <br>
         <label class="ask">Descrição</label>
         <br>
-        <textarea class="skfie" name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
+        {% render_field form.descricao class="skfie" %}
         <br><br>
         <button class="submit" type="submit">Salvar</button>
         <a class="sfgsagsaglk" href="/">
             <button class="sfgsfas" type="button">Cancelar</button>
         </a>
-    </form>
+    </form>    
 </div>
 {% endblock %}

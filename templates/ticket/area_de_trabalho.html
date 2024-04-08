@@ -41,11 +41,7 @@
                     <td><span class="status completo">Completo</span></td>
                     {% endif %}
                     <td>{{ticket.atribuido_para.username|default:'Não atribuído'}}</td>
-                    <td style={% if ticket.get_ticket_atrasado %}
-                                "color:red"
-                                {% else %}
-                                "color:black"
-                                {% endif %}>{{ticket.prazo|default:'Não informado'}}</td>
+                    <td>{{ticket.prazo|default:'Não informado'}}</td>
                     <td><small><a href="{% url 'detalhes_do_ticket' ticket.pk %}">Ver Detalhes</a></small></td>
                 </tr>
                 {% endfor %}

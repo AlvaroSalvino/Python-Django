@@ -4,29 +4,32 @@
 <h1>Agenda</h1>
 <div class="agenda">
     <h2>Tarefas</h2>
-    <section class="eventos">
-        <a class="novoevento" href="evento/">
-        <button class="novoeventoa" type="button">Novo Evento</button>
-        </a>
-        <ul class="listaeventos">
-            {% for evento in eventos %}
-                <li class="eventoslista">
-                    <div style={% if evento.get_evento_atrasado %}
-                                "color:red"
-                                {% else %}
-                                "color:black"
-                                {% endif %}>
-                                {{ evento.titulo }} - {{ evento.descricao }} - {{ evento.get_data_evento }}
-                                <a class="alteration" href="evento/?id={{ evento.id }}"> ( Editar )
-                                    
-                                </a><p style="color: black; display: inline; background-color: white;"> / </p>
-                            <a class="alteration" href="evento/delete/{{ evento.id }}/">( Excluir )
-
-                            </a>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+    <section class="eventos-table">
+        <table style="border: solid 2px #fff;">
+            <a class="novoevento" href="evento/">
+                <button class="novoeventoa" type="button">Novo Evento</button>
+                </a>
+            <thead>
+                <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evento in eventos %}
+                <tr>
+                    <td><small>{{evento.titulo|default:'Não informado'}}</small></td>
+                    <td><small>{{evento.descricao|default:'Não informado'}}</small></td>
+                    <td><small>{{evento.get_data_evento}}</small></td>
+                    <td><small><a class="alteration" href="evento/?id={{ evento.id }}">( Editar )</a> / 
+                <a class="alteration" href="evento/delete/{{ evento.id }}/">( Excluir )
+                </a></small></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </section>
 </div>
 {% endblock %}
