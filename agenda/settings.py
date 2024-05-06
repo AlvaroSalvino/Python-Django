@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'agenda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agendadb',
-        'USER': 'admin',
-        'PASSWORD': '9Gmr1U8z',
-        'HOST': 'mysql-166236-0.cloudclusters.net',
-        'PORT': '10090'
+        'NAME': 'malta360dev_NeadHelp',
+        'USER': 'malta360dev_app',
+        'PASSWORD': '67pGam.=M{6i',
+        'HOST': '162.214.89.104',
+        'PORT': '3306'
     }
 }
 
